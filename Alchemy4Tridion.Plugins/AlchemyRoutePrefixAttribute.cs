@@ -8,18 +8,34 @@ using System.Threading.Tasks;
 namespace Alchemy4Tridion.Plugins
 {
     /// <summary>
-    /// Custom route prefix for Alchemy WebAPI controllers.
+    /// Custom route prefix for Alchemy WebAPI controllers. This is required to be put on
+    /// all WebAPI controllers included in plugins.
     /// </summary>
     public class AlchemyRoutePrefixAttribute : System.Web.Http.RoutePrefixAttribute
     {
+        /// <summary>
+        /// Reference to the plugin.
+        /// </summary>
         private IAlchemyPlugin plugin;
 
+        /// <summary>
+        /// The type of the plugin.
+        /// </summary>
         private Type pluginType;
 
+        /// <summary>
+        /// The prefix that the plugin will use.
+        /// </summary>
         private string prefix;
 
+        /// <summary>
+        /// The name of the service that the controller represents.
+        /// </summary>
         private string serviceName;
 
+        /// <summary>
+        /// Gets a reference to the Plugin that this attribute is attached to.
+        /// </summary>
         public IAlchemyPlugin Plugin
         {
             get
@@ -47,7 +63,13 @@ namespace Alchemy4Tridion.Plugins
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="prefix">The prefix</param>
+        /// <param name="pluginType">The plugin type (the one that extends AlchemyPluginBase).</param>
+        /// <param name="serviceName">
+        /// The name of the service (used for the routes to your api controllers). For example, if you used
+        /// 'MyService' as a service name, then the route to all of the actions on the controller would be
+        /// /Alchemy/Plugins/PluginName/api/MyService/action.  Also the service name is what will be used
+        /// as the object that the proxy methods get attached to when the JavaScript proxy is generated.
+        /// </param>
         public AlchemyRoutePrefixAttribute(Type pluginType, string serviceName) : base()
         {
             this.pluginType = pluginType;
@@ -72,6 +94,9 @@ namespace Alchemy4Tridion.Plugins
             }
         }
 
+        /// <summary>
+        /// Gets the name of the service.  This is used to generate the routes to your api controllers.
+        /// </summary>
         public string ServiceName
         {
             get

@@ -10,7 +10,8 @@ using System.Xml.Serialization;
 namespace Alchemy4Tridion.Plugins
 {
     /// <summary>
-    /// Abstract base class to inherit your Alchemy Plugins from.
+    /// Abstract base class to inherit your Alchemy Plugins from. All plugins are required to inherit
+    /// from this base class.
     /// </summary>
     public abstract class AlchemyPluginBase : IAlchemyPlugin
     {
