@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<!--
+  - DO NOT MODIFY - USED BY UNIT TESTS
+  -->
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.alchemywebstore.com/">
+  <id>65917deag4de031154e99239</id>
+  <description><![CDATA[Sample a4t.xml file for the plugin unit tests.]]></description>
+  <name>Plugin_Unit_Tests</name>
+  <version>1.0.0.0</version>
+  <versionId>65917deae4da031154e99239</versionId>
+  <settings>
+    <WasServerKeyLoaded>true</WasServerKeyLoaded>
+    <client>
+      <Name>SDLGuy</Name>
+      <IsOld>true</IsOld>
+      <Age>99</Age>
+      <Favorites>
+        <Fav>Tridion</Fav>
+        <Fav>Anguilla</Fav>
+        <Fav>Johny Walker</Fav>
+      </Favorites>
+    </client>
+  </settings>
+</plugin>

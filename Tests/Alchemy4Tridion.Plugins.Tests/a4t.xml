@@ -1,0 +1,45 @@
+﻿<?xml version="1.0"?>
+<!--
+  - DO NOT MODIFY - USED BY UNIT TESTS
+  -->
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.alchemywebstore.com/">
+  <id>65917deag4de031154e99239</id>
+  <description><![CDATA[Sample a4t.xml file for the plugin unit tests.]]></description>
+  <name>Plugin_Unit_Tests</name>
+  <version>1.0.0.0</version>
+  <versionId>65917deae4da031154e99239</versionId>
+  <settings>
+    <SomeKey>SomeValue</SomeKey>
+    <SomeBool>true</SomeBool>
+    <SomeDate>10/06/1980</SomeDate>
+    <SomeInt>1234</SomeInt>
+    <SomeDouble>1234.56</SomeDouble>
+    <SomeList>aye,bee, see , dee,eee,f</SomeList>
+    <!-- comments should be allowed -->
+    <SomeSerializedObject>
+      <SomeString>World</SomeString>
+      <SomeBool>true</SomeBool>
+      <SomeInt>1234</SomeInt>
+      <SomeEmbeddedObject someAttribute="10">
+        <SomeEmbeddedBool>true</SomeEmbeddedBool>
+        <SomeEmbeddedString>SomeString</SomeEmbeddedString>
+      </SomeEmbeddedObject>
+      <SomeInts>
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+      </SomeInts>
+      <SomeStrings>
+        <string>One</string>
+        <string>Two</string>
+      </SomeStrings>
+    </SomeSerializedObject>
+    <SomeCData><![CDATA[<strong>SomeCDataValue</strong>]]></SomeCData>
+    <client>
+      <SomeClientKey>SomeClientValue</SomeClientKey>
+    </client>
+    <encrypt>
+      <SomeEncryptedKey>SomeEncryptedValue</SomeEncryptedKey>
+    </encrypt>
+  </settings>
+</plugin>

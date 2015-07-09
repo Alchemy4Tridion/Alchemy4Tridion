@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alchemy4Tridion.Plugins", "Alchemy4Tridion.Plugins\Alchemy4Tridion.Plugins.csproj", "{794F2803-1BD1-4B7E-8F56-213683EB0456}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{9DECECA9-EADA-43CD-83FC-68DF4C2F9AE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alchemy4Tridion.Plugins.Tests", "Tests\Alchemy4Tridion.Plugins.Tests\Alchemy4Tridion.Plugins.Tests.csproj", "{1A06A889-F5A0-4B50-8A40-384D08BC63D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{794F2803-1BD1-4B7E-8F56-213683EB0456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794F2803-1BD1-4B7E-8F56-213683EB0456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794F2803-1BD1-4B7E-8F56-213683EB0456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794F2803-1BD1-4B7E-8F56-213683EB0456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A06A889-F5A0-4B50-8A40-384D08BC63D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A06A889-F5A0-4B50-8A40-384D08BC63D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A06A889-F5A0-4B50-8A40-384D08BC63D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A06A889-F5A0-4B50-8A40-384D08BC63D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A06A889-F5A0-4B50-8A40-384D08BC63D8} = {9DECECA9-EADA-43CD-83FC-68DF4C2F9AE7}
+	EndGlobalSection
+EndGlobal
