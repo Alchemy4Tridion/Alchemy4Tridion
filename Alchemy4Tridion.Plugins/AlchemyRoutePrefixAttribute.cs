@@ -1,64 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Alchemy4Tridion.Plugins
 {
     /// <summary>
-    /// Custom route prefix for Alchemy WebAPI controllers. This is required to be put on
-    /// all WebAPI controllers included in plugins.
+    /// Custom route prefix for Alchemy WebAPI controllers to supply service names.  Service names
+    /// are used by both the js proxy and the generated url's to your controller's actions.  This is optional,
+    /// and if not supplied then the action's routes and js proxies will be added to "Api".
     /// </summary>
+    /// <example>
+    /// <code>
+    /// [AlchemyRoutePrefix("Hello")]
+    /// public class HelloController()
+    /// {
+    ///     [HttpGet]
+    ///     [HttpRoute("greet")]
+    ///     public string Greet()
+    ///     {
+    ///         return "Hello World!";
+    ///     }
+    /// }
+    /// </code>
+    /// Generated URL:
+    /// <c>/Alchemy/Plugins/YourPlugin/api/Hello/greet</c>
+    /// Generated JS Proxy:
+    /// <c>Alchemy.Plugins.YourPlugin.Api.Hello.greet();</c>
+    /// 
+    /// Without the attribute, the url would be the following:
+    /// Generated URL:
+    /// <c>Alchemy/Plugins/YourPlugin/api/greet</c>
+    /// Generated JS Proxy:
+    /// <c>Alchemy.Plugins.YourPlugin.Api.greet();</c>
+    /// </example>
     public class AlchemyRoutePrefixAttribute : System.Web.Http.RoutePrefixAttribute
     {
-        /// <summary>
-        /// Reference to the plugin.
-        /// </summary>
-        private IAlchemyPlugin plugin;
-
-        /// <summary>
-        /// The type of the plugin.
-        /// </summary>
-        private Type pluginType;
-
-        /// <summary>
-        /// The prefix that the plugin will use.
-        /// </summary>
-        private string prefix;
-
         /// <summary>
         /// The name of the service that the controller represents.
         /// </summary>
         private string serviceName;
-
-        /// <summary>
-        /// Gets a reference to the Plugin that this attribute is attached to.
-        /// </summary>
-        public IAlchemyPlugin Plugin
-        {
-            get
-            {
-                if (this.plugin == null)
-                {
-                    if (this.pluginType == null)
-                    {
-                        throw new Exception("pluginType in AlchemyRoutePrefix was null.");
-                    }
-                    if (!typeof(IAlchemyPlugin).IsAssignableFrom(this.pluginType))
-                    {
-                        throw new Exception(this.pluginType.FullName + " is not of IAclhemyPlugin in AlchemyRoutePrefix");
-                    }
-                    this.plugin = Activator.CreateInstance(this.pluginType) as IAlchemyPlugin;
-                    if (this.plugin == null)
-                    {
-                        throw new Exception("Error trying to activate instance of " + this.pluginType.FullName);
-                    }
-                }
-                return this.plugin;
-            }
-        }
 
         /// <summary>
         /// Constructor
@@ -70,27 +48,36 @@ namespace Alchemy4Tridion.Plugins
         /// /Alchemy/Plugins/PluginName/api/MyService/action.  Also the service name is what will be used
         /// as the object that the proxy methods get attached to when the JavaScript proxy is generated.
         /// </param>
+        [Obsolete("Please use the constructer with no Type parameter. This will be removed for 1.0.")]
         public AlchemyRoutePrefixAttribute(Type pluginType, string serviceName) : base()
         {
-            this.pluginType = pluginType;
-            this.prefix = "Plugins/" + Plugin.Name + "/api/";
-
-            if (String.IsNullOrEmpty(serviceName))
-            {
-                throw new Exception("ServiceName is required to be passed to the AlchemyRoutePrefixAttribute");
-            }
             this.serviceName = serviceName.Trim('/');
-            this.prefix += serviceName;
         }
 
         /// <summary>
-        /// Gets the prefix for the route.
+        /// Constructor for supplying a service name to your api controller.  The service name
+        /// is what gets used for the URL as well as the object name of the JS proxy.
+        /// </summary>
+        /// <param name="serviceName">
+        /// The name of the service (used for the routes to your api controllers). For example, if you used
+        /// 'MyService' as a service name, then the route to all of the actions on the controller would be
+        /// /Alchemy/Plugins/PluginName/api/MyService/action.  Also the service name is what will be used
+        /// as the object that the proxy methods get attached to when the JavaScript proxy is generated.
+        /// If now service name is used, then routes just get added to /Alchemy/Plugins/PluginName/api/action.
+        /// </param>
+        public AlchemyRoutePrefixAttribute(string serviceName = null)
+        {
+            this.serviceName = serviceName.Trim();
+        }
+
+        /// <summary>
+        /// Gets the prefix for the route (alias for ServiceName property).
         /// </summary>
         public override string Prefix
         {
             get
             {
-                return this.prefix;
+                return this.serviceName;
             }
         }
 
