@@ -2,7 +2,7 @@
 namespace Alchemy4Tridion.Plugins.GUI.Configuration
 {
     /// <summary>
-    /// Represents constants for string values contains within the Tridion GUI, like PageIds,
+    /// Represents constants for string values contains within the Tridion GUI, like PageIds, GroupIds
     /// View names, context menu items, etc.
     /// </summary>
     public static class Constants
@@ -89,6 +89,9 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
             public const string ToolsPage = "ToolsPage";
         }
 
+        /// <summary>
+        /// Repesents Views that you can target when applying extensions.
+        /// </summary>
         public static class Views
         {
             public const string ComponentView = "ComponentView";

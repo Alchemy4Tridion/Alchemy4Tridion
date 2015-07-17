@@ -20,6 +20,17 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         private List<CommandSetCommand> _commands = new List<CommandSetCommand>();
 
         /// <summary>
+        /// Gets or sets the list of dependencies that this commandset depends on. This should not point to the
+        /// resource group that contains the JavaScript files for the commands in this commandset (that resource
+        /// group will need to add a reference to this commandset however).
+        /// </summary>
+        public Dependencies Dependencies
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
         /// Gets the unique short identifier of the commandset.
         /// </summary>
         public string Name
@@ -58,7 +69,7 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         /// </summary>
         public CommandSet()
         {
-
+            Dependencies = new Dependencies();
         }
 
         /// <summary>
@@ -68,6 +79,7 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         public CommandSet(string id)
         {
             this.name = id;
+            Dependencies = new Dependencies();
         }
 
         /// <summary>
