@@ -98,7 +98,8 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration.Extensions
         }
         
         /// <summary>
-        /// Gets or sets the required name of the extension.
+        /// Gets or sets the required name of the extension. This often becomes the label of
+        /// the extension depending on its type.
         /// </summary>
         public string Name
         {
