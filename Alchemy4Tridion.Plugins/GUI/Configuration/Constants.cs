@@ -43,6 +43,47 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
             }
 
             /// <summary>
+            /// Represents group id's found on the Format tab.
+            /// </summary>
+            public static class FormatPage
+            {
+                /// <summary>
+                /// The group id for the "Clipboard" group found on the Format tab.
+                /// </summary>
+                public const string FormatClipboardGroup = "FormatClipboardGroup";
+
+                /// <summary>
+                /// The group id for the "Font" group found on the Format tab.
+                /// </summary>
+                public const string FormatFontGroup = "FormatFontGroup";
+
+                /// <summary>
+                /// The group id for the "General" group found on the Format tab.
+                /// </summary>
+                public const string FormatGeneralGroup = "FormatGeneralGroup";
+
+                /// <summary>
+                /// The group id for the "Insert" group found on the Format tab.
+                /// </summary>
+                public const string FormatInsertGroup = "FormatInsertGroup";
+
+                /// <summary>
+                /// The group id for the "Manage" group found on the Format tab.
+                /// </summary>
+                public const string FormatManageGroup = "FormatManageGroup";
+
+                /// <summary>
+                /// The groupid for the "Paragraph" group found on the Format tab.
+                /// </summary>
+                public const string FormatParagraphGroup = "FormatParagraphGroup";
+
+                /// <summary>
+                /// The group id for the "Style" group found on the Format tab.
+                /// </summary>
+                public const string FormatStyleGroup = "FormatStyleGroup";
+            }
+
+            /// <summary>
             /// Represents group id's found on the Home tab.
             /// </summary>
             public static class HomePage
@@ -87,6 +128,7 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
             public const string AdministrationPage = "AdministrationPage";
             public const string BundlePage = "BundlePage";
             public const string ToolsPage = "ToolsPage";
+            public const string FormatPage = "FormatPage";
         }
 
         /// <summary>

@@ -36,6 +36,11 @@ namespace Alchemy4Tridion.Plugins
         private string pluginPath;
 
         /// <summary>
+        /// Gets a reference to the actual plugin type.
+        /// </summary>
+        private Type pluginType;
+
+        /// <summary>
         /// The services that this plugin contains.
         /// </summary>
         private IPluginServiceLocator services;

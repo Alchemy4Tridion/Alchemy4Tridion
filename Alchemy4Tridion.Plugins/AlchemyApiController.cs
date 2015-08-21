@@ -1,7 +1,8 @@
-﻿using System.Web.Http;
-using System.Linq;
-using System.Reflection;
+﻿using Alchemy4Tridion.Plugins.Clients;
+using Alchemy4Tridion.Plugins.Security;
 using System;
+using System.Diagnostics;
+using System.Web.Http;
 
 namespace Alchemy4Tridion.Plugins
 {
@@ -37,11 +38,82 @@ namespace Alchemy4Tridion.Plugins
     public abstract class AlchemyApiController : ApiController, IAlchemyApiController
     {
         /// <summary>
+        /// The session aware core service client.
+        /// </summary>
+        private AlchemySessionAwareCoreServiceClient client;
+
+        /// <summary>
+        /// Gets or sets the session aware core service client. Will automatically create one impersonating the currently
+        /// logged in user using the default end point (netTcp_2013) if not previously set. This client is dispose safe (and will automatically be
+        /// disposed of by the ApiController at the end of the request if not already done so, so calling Client.Dispose() is not required).
+        /// </summary>
+        /// <remarks>
+        /// This property is lazily loaded so no core service client is created if the property is never called. Also note that this property
+        /// is used by the IUserService property.
+        /// </remarks>
+        public AlchemySessionAwareCoreServiceClient Client
+        {
+            get
+            {
+                if (this.client == null)
+                {
+                    this.client = new AlchemySessionAwareCoreServiceClient();
+                    if (Plugin == null) throw new Exception("Plugin is null");
+                    if (User == null) throw new Exception("USer is null... damn " + Plugin.Name);
+                    this.client.Impersonate(User.GetName());
+                }
+                return this.client;
+            }
+            set
+            {
+                this.client = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the plugin that is associated with this api controller (use Plugin.Services to get different
+        /// services available to the context of this plugin).
+        /// </summary>
+        public IAlchemyPlugin Plugin
+        {
+            get;
+            internal set;
+        }
+
+        /// <summary>
+        /// Gets the service used to get information about the currently logged in user (user making the http request
+        /// to this web service).
+        /// </summary>
+        public new IUserService User
+        {
+            get;
+            internal set;
+        }
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public AlchemyApiController()
         {
             //var attribute = GetType().GetCustomAttributes(typeof(AlchemyRoutePrefixAttribute), true).FirstOrDefault() as AlchemyRoutePrefixAttribute;
+        }
+
+        /// <summary>
+        /// Disposes any resources. This is automatically called at the end of a request.
+        /// </summary>
+        /// <param name="disposing"></param>
+        [NonAction]
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (this.client != null)
+                {
+                    client.Dispose();
+                }
+            }
+
+            base.Dispose(disposing);
         }
     }
    

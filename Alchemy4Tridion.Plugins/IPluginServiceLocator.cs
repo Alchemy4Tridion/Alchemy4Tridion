@@ -1,4 +1,6 @@
-﻿using Alchemy4Tridion.Plugins.Info;
+﻿using Alchemy4Tridion.Plugins.Clients;
+using Alchemy4Tridion.Plugins.Info;
+using Alchemy4Tridion.Plugins.Security;
 
 namespace Alchemy4Tridion.Plugins
 {

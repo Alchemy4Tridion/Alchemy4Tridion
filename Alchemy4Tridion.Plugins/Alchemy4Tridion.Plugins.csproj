@@ -43,6 +43,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -53,10 +55,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tridion.ContentManager.CoreService.Client">
+      <HintPath>..\Dependencies\Tridion\2013SP1\Tridion.ContentManager.CoreService.Client.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlchemyApiController.cs" />
     <Compile Include="AlchemyPluginBase.cs" />
+    <Compile Include="Content\IContentPackage.cs" />
     <Compile Include="Controllers\PluginControllerExtensions.cs" />
     <Compile Include="GUI\Configuration\CommandExtension.cs" />
     <Compile Include="GUI\Configuration\CommandSet.cs" />
@@ -96,6 +102,8 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AlchemyRoutePrefixAttribute.cs" />
+    <Compile Include="Security\IUserService.cs" />
+    <Compile Include="Clients\AlchemySessionAwareCoreServiceClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
