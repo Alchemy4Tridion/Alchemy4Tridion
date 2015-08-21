@@ -58,8 +58,6 @@ namespace Alchemy4Tridion.Plugins
                 if (this.client == null)
                 {
                     this.client = new AlchemySessionAwareCoreServiceClient();
-                    if (Plugin == null) throw new Exception("Plugin is null");
-                    if (User == null) throw new Exception("USer is null... damn " + Plugin.Name);
                     this.client.Impersonate(User.GetName());
                 }
                 return this.client;
