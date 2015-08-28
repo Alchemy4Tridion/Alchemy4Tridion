@@ -23,6 +23,11 @@ namespace Alchemy4Tridion.Plugins.Info
         string Description { get; }
 
         /// <summary>
+        /// Gets the A4T plugin framework version that the plugin was built with.
+        /// </summary>
+        string FrameworkVersion { get; }
+
+        /// <summary>
         /// Gets the unique identifier of this plugin used in the web store.
         /// </summary>
         string Id { get; }

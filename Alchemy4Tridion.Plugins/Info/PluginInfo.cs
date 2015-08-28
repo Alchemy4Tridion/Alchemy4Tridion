@@ -40,6 +40,16 @@ namespace Alchemy4Tridion.Plugins.Info
         }
 
         /// <summary>
+        /// Gets the Alchemy4Tridion Plugin framework version that this plugin was built with.
+        /// </summary>
+        [XmlElement("frameworkVersion")]
+        public string FrameworkVersion
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or sets the unique identifier of this plugin used in the web store.
         /// </summary>
         [XmlElement("id")]

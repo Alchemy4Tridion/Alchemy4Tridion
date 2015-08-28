@@ -12,4 +12,4 @@ using System.Reflection;
 // Version info... we keep AssemblyVersion with only Major version # and FileVersion represents our actual
 // file version... this helps prevent dependency hell.
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("0.6.0.0")]
+[assembly: AssemblyFileVersion("0.6.1.0")]
