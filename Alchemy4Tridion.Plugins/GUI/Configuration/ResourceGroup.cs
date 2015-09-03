@@ -19,6 +19,12 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         /// </summary>
         private string name;
 
+        internal List<ViewPage> AttachedToViews
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets or sets the list of dependencies that this group depends on.
         /// </summary>
@@ -90,6 +96,7 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         /// <param name="name">The optional name of the resource group. Uses the type name by default.</param>
         public ResourceGroup(string name = null)
         {
+            AttachedToViews = new List<ViewPage>();
             Dependencies = new Dependencies();
             Fileset = new List<File>();
 
@@ -166,6 +173,20 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
             {
                 AddFile(files[i]);
             }
+        }
+
+        /// <summary>
+        /// Attaches the resource group to a specific view in this plugin.  That view page will automatically add
+        /// the this resource group as a dependency.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="viewInherits">The base class that the view inherits from.</param>
+        public ViewPage AttachToView(string filename, string viewInherits = "Tridion.Web.UI.Controls.TridionPage")
+        {
+            var view = new ViewPage(this) { Filename = filename };
+            AttachedToViews.Add(view);
+
+            return view;
         }
     }
 }

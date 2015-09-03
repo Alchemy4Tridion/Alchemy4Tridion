@@ -8,6 +8,92 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
     public static class Constants
     {
         /// <summary>
+        /// Represents context menu items that you can target with the InsertBefore property.
+        /// </summary>
+        public static class ContextMenuIds
+        {
+            /// <summary>
+            /// Represents the main context menu's items (the one seen on the dashboard view for example).
+            /// </summary>
+            public static class MainContextMenu
+            {
+                public static string AddItemsToBundle = "cm_add_to_bundle";
+                public static string AddSelectedItemsToBundle = "cm_add_selected_to_bundle";
+                public static string AssignActivity = "cm_assignactivity";
+                public static string Blueprinting = "cm_blue";
+                public static string Classification = "cm_classification";
+                /// <summary>
+                /// The first (out of the box) separator within the clipboard commands, between Paste and Delete
+                /// </summary>
+                public static string ClipboardSeparator0 = "cm_clipboard_sep_0";
+                public static string Copy = "cm_clipboard_copy";
+                public static string Cut = "cm_clipboard_cut";
+                public static string Delete = "cm_clipboard_delete";
+                public static string DisableUser = "cm_disableuser";
+                public static string EnableUser = "cm_enableuser";
+                public static string ExploreCustomPage = "cm_expl";
+                public static string FinishActivity = "cm_finishactivity";
+                public static string ForceFinishProcess = "cm_forcefinishprocess";
+                public static string GotoLocation = "ctxGotoLocation";
+                public static string MoveDownListItems = "cm_moveDownListItems";
+                public static string MoveUpListItems = "cm_moveUpListItems";
+                public static string New = "cm_new";
+                public static string Open = "cm_open";
+                public static string OpenWithWebdav = "cm_open_webdav";
+                public static string Paste = "cm_clipboard_paste";
+                public static string Properties = "cm_properties";
+                public static string Publishing = "cm_pub";
+                public static string Refresh = "cm_refresh";
+                public static string RemoveSelectedItemsFromBundle = "cm_remove_selected_from_bundle";
+                public static string RestartActivity = "cm_restartactivity";
+                public static string RevertProcess = "cm_revertprocess";
+                public static string SendItemLink = "cm_share";
+
+                /// <summary>
+                /// The first (out of the box) separator, between OpenWithWebDav and Versioning
+                /// </summary>
+                public static string Separator1 = "cm_sep_1";
+                /// <summary>
+                /// The second (out of the box) separator, between StartLocation and Preview
+                /// </summary>
+                public static string Separator2 = "cm_sep_2";
+                /// <summary>
+                /// The third (out of the box) separator, between Preview and EnableUser
+                /// </summary>
+                public static string Separator3 = "cm_sep_3";
+                /// <summary>
+                /// The fourth (out of the box) separator, between DisableUser and Cut.
+                /// </summary>
+                public static string Separator4 = "cm_sep_4";
+                /// <summary>
+                /// The fifth (out of the box) separator, between Delete and AddItemsToBundle
+                /// </summary>
+                public static string Separator5 = "cm_sep_5";
+                /// <summary>
+                /// The sixth (out of the box) separator, between RemoveSelectedItemsFromBundle and Properties
+                /// </summary>
+                public static string Separator6 = "cm_sep_6";
+                /// <summary>
+                /// The seventh (out of the box) separator, between WhereUsed and ForceFinishProcess
+                /// </summary>
+                public static string Separator7 = "cm_sep_7";
+                /// <summary>
+                /// The eighth (out of the box) separator, between RevertProcess and MoveUpListItems
+                /// </summary>
+                public static string Separator8 = "cm_sep_8";
+                /// <summary>
+                /// The ninth (out of the box) separator, between MoveDownListItems and New
+                /// </summary>
+                public static string Separator9 = "cm_sep_9";
+                public static string StartActivity = "cm_startactivity";
+                public static string StartLocation = "cm_start";
+                public static string SuspendActivity = "cm_syspendactivity";
+                public static string Versioning = "cm_ver";
+                public static string WhereUsed = "cm_whereused";
+            }
+        }
+
+        /// <summary>
         /// Represents group id's used for targetting the groupid attribute of gui extensions.
         /// </summary>
         public static class GroupIds
@@ -136,9 +222,16 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         /// </summary>
         public static class Views
         {
+            public const string ComponentTemplateView = "ComponentTemplateView";
             public const string ComponentView = "ComponentView";
             public const string DashboardView = "DashboardView";
+            public const string PageTemplateView = "PageTemplateView";
             public const string PageView = "PageView";
+            public const string PublicationTargetView = "PublicationTargetView";
+            public const string PublicationView = "PublicationView";
+            public const string SchemaView = "SchemaView";
+            public const string Settings = "Settings";
+            public const string Welcome = "Welcome";
         }
     }
 }

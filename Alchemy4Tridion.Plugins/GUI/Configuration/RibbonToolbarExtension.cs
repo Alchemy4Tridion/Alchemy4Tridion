@@ -1,5 +1,6 @@
 ﻿using Alchemy4Tridion.Plugins.GUI.Configuration.Extensions;
 using System;
+using System.IO;
 
 namespace Alchemy4Tridion.Plugins.GUI.Configuration
 {
@@ -38,6 +39,11 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
                 {
                     return null;
                 }
+                // if there's no extension, return as its the name for creating a group.
+                if (String.IsNullOrEmpty(Path.GetExtension(this.group)))
+                {
+                    return this.group;
+                }
                 if (!this.group.Contains("/"))
                 {
                     return string.Format("~/Plugins/{0}/assets/controls/{1}", Plugin.Name, this.group);
@@ -48,10 +54,6 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
             set
             {
                 this.group = value.Replace("~", String.Empty);
-                if (!this.group.ToLower().EndsWith(".ascx"))
-                {
-                    this.group += ".ascx";
-                }
             }
         }
 

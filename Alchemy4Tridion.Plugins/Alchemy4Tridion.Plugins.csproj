@@ -66,6 +66,7 @@
     <Compile Include="Controllers\PluginControllerExtensions.cs" />
     <Compile Include="GUI\Configuration\CommandExtension.cs" />
     <Compile Include="GUI\Configuration\CommandSet.cs" />
+    <Compile Include="GUI\Configuration\ContextMenuDeclaration.cs" />
     <Compile Include="GUI\Configuration\ContextMenuExtension.cs" />
     <Compile Include="GUI\Configuration\EditorExtensionMethods.cs" />
     <Compile Include="GUI\Configuration\Elements\CommandSetCommand.cs" />
@@ -73,6 +74,8 @@
     <Compile Include="GUI\Configuration\Elements\Dependencies.cs" />
     <Compile Include="GUI\Configuration\Elements\Dependency.cs" />
     <Compile Include="GUI\Configuration\Elements\ExtensionGroupInsertAfter.cs" />
+    <Compile Include="GUI\Configuration\Elements\ViewPage.cs" />
+    <Compile Include="GUI\Configuration\ExtendedAreaExtension.cs" />
     <Compile Include="GUI\Configuration\ExtensionGroup.cs" />
     <Compile Include="GUI\Configuration\Extensions\Apply.cs" />
     <Compile Include="GUI\Configuration\Extensions\ApplyView.cs" />
