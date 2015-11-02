@@ -227,6 +227,7 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
             public const string DashboardView = "DashboardView";
             public const string PageTemplateView = "PageTemplateView";
             public const string PageView = "PageView";
+            public const string ProxyView = "ProxyView";
             public const string PublicationTargetView = "PublicationTargetView";
             public const string PublicationView = "PublicationView";
             public const string SchemaView = "SchemaView";
