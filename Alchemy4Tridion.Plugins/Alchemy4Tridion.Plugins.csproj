@@ -63,7 +63,9 @@
     <Compile Include="AlchemyApiController.cs" />
     <Compile Include="AlchemyPluginBase.cs" />
     <Compile Include="Content\IContentPackage.cs" />
+    <Compile Include="Controllers\IWindowsImpersonator.cs" />
     <Compile Include="Controllers\PluginControllerExtensions.cs" />
+    <Compile Include="Controllers\RequiresWindowsImpersonationAttribute.cs" />
     <Compile Include="GUI\Configuration\CommandExtension.cs" />
     <Compile Include="GUI\Configuration\CommandSet.cs" />
     <Compile Include="GUI\Configuration\ContextMenuDeclaration.cs" />
