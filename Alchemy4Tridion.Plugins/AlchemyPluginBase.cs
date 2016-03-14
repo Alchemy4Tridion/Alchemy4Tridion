@@ -2,6 +2,7 @@
 using Alchemy4Tridion.Plugins.Info;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
@@ -15,6 +16,8 @@ namespace Alchemy4Tridion.Plugins
     /// </summary>
     public abstract class AlchemyPluginBase : IAlchemyPlugin
     {
+        public static string AlchemyPluginsDirectory = null;
+
         /// <summary>
         /// The editor sections that this plugin contains.
         /// </summary>
@@ -236,7 +239,14 @@ namespace Alchemy4Tridion.Plugins
             
             string pluginName = fileLocation.Split('/')[0];
 
-            this.pluginPath = HostingEnvironment.MapPath(String.Format("/Alchemy/Plugins/{0}/", pluginName));
+            if (String.IsNullOrEmpty(AlchemyPluginsDirectory))
+            {
+                this.pluginPath = HostingEnvironment.MapPath(String.Format("/Alchemy/Plugins/{0}/", pluginName));
+            }
+            else
+            {
+                this.pluginPath = String.Format("{0}{1}{2}\\", AlchemyPluginsDirectory, AlchemyPluginsDirectory.EndsWith("\\") ? String.Empty : "\\", pluginName);
+            }
             LoadInfo();
         }
 
