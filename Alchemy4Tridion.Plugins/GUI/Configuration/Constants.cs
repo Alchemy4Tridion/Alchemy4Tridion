@@ -94,6 +94,23 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         }
 
         /// <summary>
+        /// represents button id's in the ribbon toolbar
+        /// </summary>
+        public static class RibbonToolbarButtonIds
+        {
+            public static class HomePage
+            {
+                public static class ManageGroup
+                {
+                    public static string Open = "OpenBtn";
+                    public static string BlueprintHierarchy = "BlueprintHierarchyBtn";
+                    public static string WhereUsed = "WhereUsedBtn";
+                    public static string ManageItemsGroup = "ManageItemsGroup2";
+                }
+            }
+        }
+
+        /// <summary>
         /// Represents group id's used for targetting the groupid attribute of gui extensions.
         /// </summary>
         public static class GroupIds
