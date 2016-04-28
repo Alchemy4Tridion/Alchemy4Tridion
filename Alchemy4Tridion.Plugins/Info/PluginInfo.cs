@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Info
@@ -64,6 +65,17 @@ namespace Alchemy4Tridion.Plugins.Info
         /// </summary>
         [XmlElement("name")]
         public string Name
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the references used by the plugin.
+        /// </summary>
+        [XmlArray("references")]
+        [XmlArrayItem("add")]
+        public List<PluginReference> References
         {
             get;
             set;
