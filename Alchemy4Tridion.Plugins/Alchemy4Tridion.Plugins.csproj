@@ -97,6 +97,7 @@
     <Compile Include="Info\ISettingsEncryptorService.cs" />
     <Compile Include="Info\IStronglyTypedClientSettings.cs" />
     <Compile Include="Info\PluginInfo.cs" />
+    <Compile Include="Info\PluginReference.cs" />
     <Compile Include="Info\PluginSetting.cs" />
     <Compile Include="Info\PluginSettings.cs" />
     <Compile Include="Info\SettingsDeserializationService..cs" />

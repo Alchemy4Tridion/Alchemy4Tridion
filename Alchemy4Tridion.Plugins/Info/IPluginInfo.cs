@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Alchemy4Tridion.Plugins.Info
 {
@@ -36,6 +37,11 @@ namespace Alchemy4Tridion.Plugins.Info
         /// Gets the unique plugin's name.
         /// </summary>
         string Name { get; }
+
+        /// <summary>
+        /// Gets the references that the plugin contains.
+        /// </summary>
+        List<PluginReference> References { get; }
 
         /// <summary>
         /// Gets the summary of the plugin.
