@@ -1,5 +1,6 @@
 ﻿using Alchemy4Tridion.Plugins.GUI.Configuration;
 using Alchemy4Tridion.Plugins.Info;
+using Alchemy4Tridion.Plugins.Logging;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 
@@ -109,6 +110,11 @@ namespace Alchemy4Tridion.Plugins
         /// </summary>
         /// <param name="services">The default services that are used by this plugin.</param>
         void Configure(IPluginServiceLocator services);
+
+        /// <summary>
+        /// Gets a logger that is named to the instance of the plugin. Shortcut for Plugin.Services.LogManager.GetLogger.
+        /// </summary>
+        ILogger GetLogger();
 
         /// <summary>
         /// Maps a url relative to the editor url.

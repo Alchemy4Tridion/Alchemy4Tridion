@@ -1,6 +1,7 @@
 using System.Reflection;
 
-/**
+
+/*
  * Common Assembly Information that is shared across the A4T projects.
  */
 

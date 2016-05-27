@@ -1,6 +1,5 @@
-﻿using Alchemy4Tridion.Plugins.Clients;
-using Alchemy4Tridion.Plugins.Info;
-using Alchemy4Tridion.Plugins.Security;
+﻿using Alchemy4Tridion.Plugins.Info;
+using Alchemy4Tridion.Plugins.Logging;
 
 namespace Alchemy4Tridion.Plugins
 {
@@ -10,6 +9,15 @@ namespace Alchemy4Tridion.Plugins
     /// </summary>
     public class PluginServiceLocator : IPluginServiceLocator
     {
+        /// <summary>
+        /// Gets or sets the log manager for the plugin.
+        /// </summary>
+        public IPluginLogManager LogManager
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets or sets the utility that will be used to deserialize the plugin's settings.
         /// </summary>
