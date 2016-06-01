@@ -21,6 +21,26 @@ namespace Alchemy4Tridion.Plugins.Info
         }
 
         /// <summary>
+        /// Gets the unique identifier of the author.
+        /// </summary>
+        [XmlElement("authorId")]
+        public string AuthorId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the author's type.
+        /// </summary>
+        [XmlElement("authorType")]
+        public string AuthorType
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or sets the time that this plugin was built.
         /// </summary>
         [XmlElement("buildTime")]
