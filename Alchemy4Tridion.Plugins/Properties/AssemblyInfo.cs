@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Alchemy4Tridion.Plugins")]
 [assembly: AssemblyDescription("Library for creating plugins that be installed by the Alchemy Framework.")]
 
+[assembly: InternalsVisibleTo("Alchemy4Tridion")]
 [assembly: InternalsVisibleTo("Alchemy4Tridion.Core")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

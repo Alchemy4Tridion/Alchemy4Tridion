@@ -14,6 +14,16 @@ namespace Alchemy4Tridion.Plugins.Info
         string Author { get; }
 
         /// <summary>
+        /// Gets the unique identifier of the author.
+        /// </summary>
+        string AuthorId { get; }
+
+        /// <summary>
+        /// Gets the type of the author.
+        /// </summary>
+        string AuthorType { get; }
+
+        /// <summary>
         /// Gets the time that this plugin was built.
         /// </summary>
         DateTime BuildTime { get; }
