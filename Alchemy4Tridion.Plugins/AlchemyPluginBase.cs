@@ -1,8 +1,8 @@
 ﻿using Alchemy4Tridion.Plugins.GUI.Configuration;
 using Alchemy4Tridion.Plugins.Info;
+using Alchemy4Tridion.Plugins.Logging;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
@@ -16,6 +16,9 @@ namespace Alchemy4Tridion.Plugins
     /// </summary>
     public abstract class AlchemyPluginBase : IAlchemyPlugin
     {
+        /// <summary>
+        /// The directory where Alchemy Plugins is installed;
+        /// </summary>
         public static string AlchemyPluginsDirectory = null;
 
         /// <summary>
@@ -268,6 +271,14 @@ namespace Alchemy4Tridion.Plugins
         public virtual void Configure(IPluginServiceLocator services)
         {
             
+        }
+
+        /// <summary>
+        /// Gets a logger that is named to the instance of the plugin. Shortcut for Plugin.Services.LogManager.GetLogger.
+        /// </summary>
+        public ILogger GetLogger()
+        {
+            return Services.LogManager.GetLogger();
         }
 
         /// <summary>
