@@ -80,6 +80,27 @@ namespace Alchemy4Tridion.Plugins.Info
             set;
         }
 
+        [XmlElement("installedAt")]
+        public DateTime InstalledAt
+        {
+            get;
+            set;
+        }
+
+        [XmlElement("installedBy")]
+        public string InstalledBy
+        {
+            get;
+            set;
+        }
+
+        [XmlElement("installedFrom")]
+        public string InstalledFrom
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets or sets the unique plugin's name.
         /// </summary>
