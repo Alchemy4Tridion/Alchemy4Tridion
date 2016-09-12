@@ -44,6 +44,21 @@ namespace Alchemy4Tridion.Plugins.Info
         string Id { get; }
 
         /// <summary>
+        /// Gets the time that the plugin was installed.
+        /// </summary>
+        DateTime InstalledAt { get; }
+
+        /// <summary>
+        /// Gets the username of the user who installed the plugin.
+        /// </summary>
+        string InstalledBy { get; }
+
+        /// <summary>
+        /// Gets the method of installation (webstore, package upload).
+        /// </summary>
+        string InstalledFrom { get; }
+
+        /// <summary>
         /// Gets the unique plugin's name.
         /// </summary>
         string Name { get; }
