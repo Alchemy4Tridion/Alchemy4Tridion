@@ -61,13 +61,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Tridion.ContentManager.CoreService.Client">
+      <HintPath>..\Dependencies\Tridion\Web8\Tridion.ContentManager.CoreService.Client.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\Tridion\2013SP1\Tridion.ContentManager.CoreService.Client.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlchemyApiController.cs" />
     <Compile Include="AlchemyPluginBase.cs" />
+    <Compile Include="Clients\CoreService\ISessionAwareCoreService2013.cs" />
+    <Compile Include="Clients\CoreService\ISessionAwareCoreService201501.cs" />
+    <Compile Include="Clients\CoreService\ISessionAwareCoreService20l3Channel.cs" />
+    <Compile Include="Clients\CoreService\ISessionAwareCoreService201501Channel.cs" />
     <Compile Include="Content\IContentPackage.cs" />
     <Compile Include="Controllers\IWindowsImpersonator.cs" />
     <Compile Include="Controllers\PluginControllerExtensions.cs" />
