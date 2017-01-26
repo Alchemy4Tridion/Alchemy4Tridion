@@ -60,18 +60,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tridion.ContentManager.CoreService.Client">
-      <HintPath>..\Dependencies\Tridion\Web8\Tridion.ContentManager.CoreService.Client.dll</HintPath>
+    <Reference Include="Tridion.ContentManager.CoreService.Client, Version=7.1.0.1290, Culture=neutral, PublicKeyToken=ddfc895746e5ee6b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Tridion\2013SP1\Tridion.ContentManager.CoreService.Client.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlchemyApiController.cs" />
     <Compile Include="AlchemyPluginBase.cs" />
-    <Compile Include="Clients\CoreService\ISessionAwareCoreService2013.cs" />
-    <Compile Include="Clients\CoreService\ISessionAwareCoreService201501.cs" />
-    <Compile Include="Clients\CoreService\ISessionAwareCoreService20l3Channel.cs" />
-    <Compile Include="Clients\CoreService\ISessionAwareCoreService201501Channel.cs" />
+    <Compile Include="Clients\AlchemyCoreServiceClient201501.cs" />
+    <Compile Include="Clients\AlchemySessionAwareCoreServiceClient.cs" />
+    <Compile Include="Clients\AlchemyClients.cs" />
+    <Compile Include="Clients\IAlchemyCoreServiceClient.cs" />
     <Compile Include="Content\IContentPackage.cs" />
     <Compile Include="Controllers\IWindowsImpersonator.cs" />
     <Compile Include="Controllers\PluginControllerExtensions.cs" />
@@ -125,7 +125,7 @@
     </Compile>
     <Compile Include="AlchemyRoutePrefixAttribute.cs" />
     <Compile Include="Security\IUserService.cs" />
-    <Compile Include="Clients\AlchemySessionAwareCoreServiceClient.cs" />
+    <Compile Include="Clients\AlchemyCoreServiceClient2013.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -136,6 +136,12 @@
     <Folder Include="Content\DXA\" />
     <Folder Include="EventSystem\" />
     <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client Proxies\CoreService\Alchemy4Tridion.Plugins.Clients.CoreService.csproj">
+      <Project>{251a1cee-1bf1-4791-ad25-3e70ab4c4b24}</Project>
+      <Name>Alchemy4Tridion.Plugins.Clients.CoreService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

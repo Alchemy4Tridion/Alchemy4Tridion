@@ -42,6 +42,8 @@ namespace Alchemy4Tridion.Plugins
         /// </summary>
         private AlchemySessionAwareCoreServiceClient client;
 
+        private AlchemyClients clients;
+
         /// <summary>
         /// Gets or sets the session aware core service client. Will automatically create one impersonating the currently
         /// logged in user using the default end point (netTcp_2013) if not previously set. This client is dispose safe (and will automatically be
@@ -51,6 +53,7 @@ namespace Alchemy4Tridion.Plugins
         /// This property is lazily loaded so no core service client is created if the property is never called. Also note that this property
         /// is used by the IUserService property.
         /// </remarks>
+        [Obsolete]
         public AlchemySessionAwareCoreServiceClient Client
         {
             get
@@ -65,6 +68,21 @@ namespace Alchemy4Tridion.Plugins
             set
             {
                 this.client = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets a helper to client service contracts.
+        /// </summary>
+        public AlchemyClients Clients
+        {
+            get
+            {
+                if (this.clients == null)
+                {
+                    this.clients = new AlchemyClients(User.GetName());
+                }
+                return this.clients;
             }
         }
 
@@ -108,6 +126,10 @@ namespace Alchemy4Tridion.Plugins
                 if (this.client != null)
                 {
                     client.Dispose();
+                }
+                if (Clients != null)
+                {
+                    Clients.Dispose();
                 }
             }
 
