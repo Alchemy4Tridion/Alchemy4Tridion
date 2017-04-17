@@ -66,7 +66,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         /// </summary>
         /// <param name="endPoint"></param>
         public AlchemySessionAwareCoreServiceClient(SessionAwareCoreServiceEndPoint endPoint)
-            : base(GetEnpointConfigurationName(endPoint))
+            : base(GetEndpointConfigurationName(endPoint))
         {
             ClientEndpoint = endPoint;
         }
@@ -86,7 +86,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         /// </summary>
         /// <param name="endPoint"></param>
         /// <returns></returns>
-        private static string GetEnpointConfigurationName(SessionAwareCoreServiceEndPoint endPoint)
+        private static string GetEndpointConfigurationName(SessionAwareCoreServiceEndPoint endPoint)
         {
             switch (endPoint)
             {

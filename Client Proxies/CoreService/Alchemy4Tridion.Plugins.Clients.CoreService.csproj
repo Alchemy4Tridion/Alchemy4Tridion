@@ -309,6 +309,9 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\Info.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\InstanceData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService2013.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService201501.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreServiceBase.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreServiceChannel.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsExistingObjectCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsExistingObjectCompletedEventArgs1.cs" />

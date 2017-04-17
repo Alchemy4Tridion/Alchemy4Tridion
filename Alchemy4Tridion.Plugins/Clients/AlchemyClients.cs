@@ -9,15 +9,22 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         private IAlchemyCoreServiceClient sessionAwareCoreServiceClient;
 
+        private SessionAwareCoreServiceEndPoint defaultCoreServiceEndpoint;
+
         /// <summary>
         /// The default session aware core service endpoint to use.
-        /// TODO: Make this dynamic based on what version of Tridion is running.
         /// </summary>
         public SessionAwareCoreServiceEndPoint DefaultCoreServiceEndPoint
         {
-            get;
-            set;
-        } = SessionAwareCoreServiceEndPoint.NetTcp2013;
+            get
+            {
+                return this.defaultCoreServiceEndpoint;
+            }
+            set
+            {
+                this.defaultCoreServiceEndpoint = value;
+            }
+        }
 
         /// <summary>
         /// Gets a session aware core service client that can be used for scope duration.  Uses the DefaultCoreServiceEndPoint to open.
@@ -43,6 +50,13 @@ namespace Alchemy4Tridion.Plugins.Clients
         public AlchemyClients(string currentUser)
         {
             this.currentUser = currentUser;
+            this.defaultCoreServiceEndpoint = defaultCoreServiceEndpoint;
+        }
+
+        public AlchemyClients(string currentUser, SessionAwareCoreServiceEndPoint endPoint)
+        {
+            this.currentUser = currentUser;
+            this.defaultCoreServiceEndpoint = endPoint;
         }
 
         public IAlchemyCoreServiceClient CreateSessionAwareCoreServiceClient(SessionAwareCoreServiceEndPoint endpoint)

@@ -44,6 +44,12 @@ namespace Alchemy4Tridion.Plugins
 
         private AlchemyClients clients;
 
+        public SessionAwareCoreServiceEndPoint EndPoint
+        {
+            get;
+            internal set;
+        }
+
         /// <summary>
         /// Gets or sets the session aware core service client. Will automatically create one impersonating the currently
         /// logged in user using the default end point (netTcp_2013) if not previously set. This client is dispose safe (and will automatically be
@@ -80,7 +86,7 @@ namespace Alchemy4Tridion.Plugins
             {
                 if (this.clients == null)
                 {
-                    this.clients = new AlchemyClients(User.GetName());
+                    this.clients = new AlchemyClients(User.GetName(), EndPoint);
                 }
                 return this.clients;
             }
