@@ -54,7 +54,13 @@ namespace Alchemy4Tridion.Plugins.Logging
         void Info(string message, params object[] args);
 
         /// <summary>
-        /// Logs a message at the debug level.
+        /// Logs a message at the info level.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        void Info(string message);
+
+        /// <summary>
+        /// Logs a message at the warning level.
         /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="args">Zero or more arguments to pass to the log message's format string.</param>
@@ -65,5 +71,22 @@ namespace Alchemy4Tridion.Plugins.Logging
         /// </summary>
         /// <param name="ex"></param>
         void Warn(Exception ex);
+
+
+        /// <summary>
+        /// Logs a message at the audit level.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="args">Zero or more arguments to pass to the log message's format string.</param>
+        void Audit(string message, params object[] args);
+
+        /// <summary>
+        /// Logs an exception at the audit level.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        void Audit(string message);
+
+        bool IsDebugEnabled { get; }
+
     }
 }
