@@ -8,9 +8,9 @@ using System.Reflection;
 // Our Company and Product Information...
 [assembly: AssemblyCompany("Content Bloom")]
 [assembly: AssemblyProduct("Alchemy4Tridion")]
-[assembly: AssemblyCopyright("Copyright © Content Bloom 2015")]
+[assembly: AssemblyCopyright("Copyright © Content Bloom 2017")]
 
 // Version info... we keep AssemblyVersion with only Major version # and FileVersion represents our actual
 // file version... this helps prevent dependency hell.
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("0.8.4.0")]
+[assembly: AssemblyVersion("1.0.0.3")]
+[assembly: AssemblyFileVersion("1.0.0.3")]
