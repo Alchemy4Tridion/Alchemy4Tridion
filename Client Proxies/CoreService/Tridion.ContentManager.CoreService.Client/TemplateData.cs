@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "TemplateData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(TemplateBuildingBlockData)), KnownType(typeof(PageTemplateData)), KnownType(typeof(ComponentTemplateData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "TemplateData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(ComponentTemplateData)), KnownType(typeof(PageTemplateData)), KnownType(typeof(TemplateBuildingBlockData))]
 	public class TemplateData : VersionedItemData
 	{
 		private BinaryContentData BinaryContentField;

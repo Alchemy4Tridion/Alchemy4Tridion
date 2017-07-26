@@ -18,6 +18,8 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 		[EnumMember]
 		IncludeAllowedActions = 8,
 		[EnumMember]
-		IncludeDynamicVersionInfo = 16
+		IncludeDynamicVersionInfo = 16,
+		[EnumMember]
+		ExpandLinks = 32
 	}
 }

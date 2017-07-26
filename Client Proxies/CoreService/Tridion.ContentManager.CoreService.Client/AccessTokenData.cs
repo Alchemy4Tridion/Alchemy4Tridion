@@ -12,6 +12,8 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private string SignatureField;
 
+		private SystemPrivilegesDictionary InheritedSystemPrivilegesField;
+
 		[DataMember(EmitDefaultValue = false)]
 		public DateTime ExpiresAt
 		{
@@ -35,6 +37,19 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 			set
 			{
 				this.SignatureField = value;
+			}
+		}
+
+		[DataMember(EmitDefaultValue = false, Order = 2)]
+		public SystemPrivilegesDictionary InheritedSystemPrivileges
+		{
+			get
+			{
+				return this.InheritedSystemPrivilegesField;
+			}
+			set
+			{
+				this.InheritedSystemPrivilegesField = value;
 			}
 		}
 	}

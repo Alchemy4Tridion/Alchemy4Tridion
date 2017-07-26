@@ -81,8 +81,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 			{
 				using (MemoryStream memoryStream2 = new MemoryStream())
 				{
-					IFormatter formatter = new BinaryFormatter();
-					formatter.Serialize(memoryStream2, this._typedApplicationData);
+					((IFormatter)new BinaryFormatter()).Serialize(memoryStream2, this._typedApplicationData);
 					this._applicationData.Data = memoryStream2.ToArray();
 				}
 				this._applicationData.TypeId = ApplicationDataAdapter.BuildTypeIdForSerializable(this._typedApplicationData);
@@ -113,8 +112,8 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 					using (XmlDictionaryReader xmlDictionaryReader = XmlDictionaryReader.CreateBinaryReader(memoryStream, XmlDictionaryReaderQuotas.Max))
 					{
 						this._typedApplicationData = dataContractSerializer.ReadObject(xmlDictionaryReader);
+						return;
 					}
-					return;
 				}
 			}
 			if (this._applicationData.TypeId.StartsWith("Serializable:"))
@@ -159,8 +158,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private static bool HasAttribute(object objectToCheck, Type attributeType)
 		{
-			object[] customAttributes = objectToCheck.GetType().GetCustomAttributes(attributeType, false);
-			return customAttributes.Length > 0;
+			return objectToCheck.GetType().GetCustomAttributes(attributeType, false).Length != 0;
 		}
 
 		private static void AssertNotNull(object value, string name)

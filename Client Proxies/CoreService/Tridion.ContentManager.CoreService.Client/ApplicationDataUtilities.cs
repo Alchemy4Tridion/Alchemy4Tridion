@@ -6,8 +6,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 	{
 		public static T GetAs<T>(this ApplicationData target)
 		{
-			ApplicationDataAdapter applicationDataAdapter = new ApplicationDataAdapter(target);
-			return applicationDataAdapter.GetAs<T>();
+			return new ApplicationDataAdapter(target).GetAs<T>();
 		}
 	}
 }

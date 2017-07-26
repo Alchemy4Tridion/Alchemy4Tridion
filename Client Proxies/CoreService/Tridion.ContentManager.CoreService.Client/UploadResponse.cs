@@ -6,10 +6,10 @@ using System.ServiceModel;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.ServiceModel", "4.0.0.0"), EditorBrowsable(EditorBrowsableState.Advanced), DebuggerStepThrough, MessageContract(WrapperName = "UploadResponse", WrapperNamespace = "http://www.sdltridion.com/ContentManager/CoreService/201501", IsWrapped = true)]
+	[GeneratedCode("System.ServiceModel", "4.0.0.0"), EditorBrowsable(EditorBrowsableState.Advanced), DebuggerStepThrough, MessageContract(WrapperName = "UploadResponse", WrapperNamespace = "http://www.sdltridion.com/ContentManager/CoreService/201603", IsWrapped = true)]
 	public class UploadResponse
 	{
-		[MessageHeader(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201501")]
+		[MessageHeader(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201603")]
 		public string FilePath;
 
 		public UploadResponse()

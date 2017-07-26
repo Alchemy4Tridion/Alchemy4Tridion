@@ -7,13 +7,13 @@ using System.ServiceModel;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.ServiceModel", "4.0.0.0"), EditorBrowsable(EditorBrowsableState.Advanced), DebuggerStepThrough, MessageContract(WrapperName = "UploadRequest", WrapperNamespace = "http://www.sdltridion.com/ContentManager/CoreService/201501", IsWrapped = true)]
+	[GeneratedCode("System.ServiceModel", "4.0.0.0"), EditorBrowsable(EditorBrowsableState.Advanced), DebuggerStepThrough, MessageContract(WrapperName = "UploadRequest", WrapperNamespace = "http://www.sdltridion.com/ContentManager/CoreService/201603", IsWrapped = true)]
 	public class UploadRequest
 	{
-		[MessageHeader(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201501")]
+		[MessageHeader(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201603")]
 		public AccessTokenData AccessToken;
 
-		[MessageBodyMember(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201501", Order = 0)]
+		[MessageBodyMember(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201603", Order = 0)]
 		public Stream UploadContent;
 
 		public UploadRequest()

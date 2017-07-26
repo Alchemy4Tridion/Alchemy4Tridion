@@ -2,9 +2,11 @@ using System;
 using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading;
+
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
@@ -191,64 +193,124 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private SendOrPostCallback onBatchSynchronizeWithSchemaAndUpdateCompletedDelegate;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ImpersonateBatchCompletedEventArgs> ImpersonateBatchCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> ImpersonateBatchWithTokenCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ImpersonateBatchWithClaimsCompletedEventArgs> ImpersonateBatchWithClaimsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchLocalizeCompletedEventArgs> BatchLocalizeCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchUnLocalizeCompletedEventArgs> BatchUnLocalizeCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchPromoteCompletedEventArgs> BatchPromoteCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchDemoteCompletedEventArgs> BatchDemoteCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchCopyCompletedEventArgs> BatchCopyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchMoveCompletedEventArgs> BatchMoveCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchCheckInCompletedEventArgs> BatchCheckInCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchCheckOutCompletedEventArgs> BatchCheckOutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchDeleteCompletedEventArgs> BatchDeleteCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchPublishCompletedEventArgs> BatchPublishCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchUnPublishCompletedEventArgs> BatchUnPublishCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchUndoCheckOutCompletedEventArgs> BatchUndoCheckOutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchStartActivityCompletedEventArgs> BatchStartActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchFinishActivityCompletedEventArgs> BatchFinishActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchForceFinishProcessCompletedEventArgs> BatchForceFinishProcessCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchClassifyCompletedEventArgs> BatchClassifyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchUnClassifyCompletedEventArgs> BatchUnClassifyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchReClassifyCompletedEventArgs> BatchReClassifyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchDeleteTaxonomyNodeCompletedEventArgs> BatchDeleteTaxonomyNodeCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchSwitchUserEnabledStateCompletedEventArgs> BatchSwitchUserEnabledStateCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchCopyToKeywordCompletedEventArgs> BatchCopyToKeywordCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchMoveToKeywordCompletedEventArgs> BatchMoveToKeywordCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchReAssignActivityCompletedEventArgs> BatchReAssignActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchRestartActivityCompletedEventArgs> BatchRestartActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchSuspendActivityCompletedEventArgs> BatchSuspendActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchResumeActivityCompletedEventArgs> BatchResumeActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BatchSynchronizeWithSchemaAndUpdateCompletedEventArgs> BatchSynchronizeWithSchemaAndUpdateCompleted;
 
 		public CoreServiceBatchClient()

@@ -15,7 +15,8 @@ namespace Alchemy4Tridion.Plugins.Clients
         /**
          * SDL Web 8 end point
          */
-        NetTcp201501
+        NetTcp201501,
+        NetTcp201603
     }
 
     /// <summary>
@@ -96,6 +97,8 @@ namespace Alchemy4Tridion.Plugins.Clients
                     return "netTcp_2012";
                 case SessionAwareCoreServiceEndPoint.NetTcp201501:
                     return "netTcp_201501";
+                case SessionAwareCoreServiceEndPoint.NetTcp201603:
+                    return "netTcp_201603";
                 default:
                     return "netTcp_2013";
             }

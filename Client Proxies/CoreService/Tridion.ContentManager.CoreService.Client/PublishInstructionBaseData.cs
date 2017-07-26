@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "PublishInstructionBaseData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(UnPublishInstructionData)), KnownType(typeof(PublishInstructionData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "PublishInstructionBaseData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(PublishInstructionData)), KnownType(typeof(UnPublishInstructionData))]
 	public class PublishInstructionBaseData : IExtensibleDataObject
 	{
 		private ExtensionDataObject extensionDataField;
