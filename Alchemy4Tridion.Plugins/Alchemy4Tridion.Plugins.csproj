@@ -68,10 +68,15 @@
   <ItemGroup>
     <Compile Include="AlchemyApiController.cs" />
     <Compile Include="AlchemyPluginBase.cs" />
+    <Compile Include="Clients\AlchemyCoreServiceClient201603.cs" />
     <Compile Include="Clients\AlchemyCoreServiceClient201501.cs" />
     <Compile Include="Clients\AlchemySessionAwareCoreServiceClient.cs" />
     <Compile Include="Clients\AlchemyClients.cs" />
     <Compile Include="Clients\IAlchemyCoreServiceClient.cs" />
+    <Compile Include="Clients\AlchemyStreamDownloadClient201603.cs" />
+    <Compile Include="Clients\AlchemyStreamUploadClient201603.cs" />
+    <Compile Include="Clients\IAlchemyStreamDownload.cs" />
+    <Compile Include="Clients\IAlchemyStreamUpload.cs" />
     <Compile Include="Content\IContentPackage.cs" />
     <Compile Include="Controllers\IWindowsImpersonator.cs" />
     <Compile Include="Controllers\PluginControllerExtensions.cs" />
@@ -118,13 +123,14 @@
     <Compile Include="Logging\ILogManager.cs" />
     <Compile Include="Logging\IPluginLogManager.cs" />
     <Compile Include="Logging\PluginLogSettings.cs" />
+    <Compile Include="Models\ImpersonationUserModel.cs" />
     <Compile Include="PluginServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Alchemy4Tridion.Shared\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AlchemyRoutePrefixAttribute.cs" />
-    <Compile Include="Security\IUserService.cs" />
+    <Compile Include="Logging\Security\IUserService.cs" />
     <Compile Include="Clients\AlchemyCoreServiceClient2013.cs" />
   </ItemGroup>
   <ItemGroup>

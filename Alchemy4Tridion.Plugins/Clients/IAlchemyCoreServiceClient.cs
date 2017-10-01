@@ -58,6 +58,8 @@ namespace Alchemy4Tridion.Plugins.Clients
         Task<SecurityDescriptorDataDictionary> GetContentSecurityDescriptorsForOrgItemIdsAsync(string[] organizationalItemIds);
         UserData GetCurrentUser();
         Task<UserData> GetCurrentUserAsync();
+        AccessTokenData GetCurrentUserWithToken();
+        Task<AccessTokenData> GetCurrentUserWithTokenAsync();
         IdentifiableObjectData GetDefaultData(ItemType itemType, string containerId, ReadOptions readOptions = null);
         Task<IdentifiableObjectData> GetDefaultDataAsync(ItemType itemType, string containerId, ReadOptions readOptions = null);
         TridionEnumValue[] GetEnumValues(string type);
@@ -241,5 +243,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         Task<ValidationErrorData[]> ValidateAsync(IdentifiableObjectData deltaData);
         void ValidateXml(IdentifiableObjectData data);
         Task ValidateXmlAsync(IdentifiableObjectData data);
+
+
     }
 }

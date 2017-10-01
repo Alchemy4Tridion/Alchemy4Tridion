@@ -8,10 +8,8 @@ using System.ServiceModel.Channels;
 using System.Threading;
 using System.Xml.Linq;
 
-
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.ServiceModel", "4.0.0.0"), DebuggerStepThrough]
 	public class SessionAwareCoreServiceClient : ClientBase<ISessionAwareCoreService>, ISessionAwareCoreService, IDisposable
 	{
 		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginGetVirtualFolderTypeSchemaDelegate;

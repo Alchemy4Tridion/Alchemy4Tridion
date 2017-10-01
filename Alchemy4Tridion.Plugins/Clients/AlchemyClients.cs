@@ -1,62 +1,87 @@
 ﻿using Alchemy4Tridion.Plugins.Clients.CoreService;
 using System;
+using System.Net;
+using System.Security.Principal;
+using Alchemy4Tridion.Plugins.Models;
 
 namespace Alchemy4Tridion.Plugins.Clients
 {
     public class AlchemyClients : IDisposable
     {
-        private string currentUser;
+        private readonly string _currentUser;
 
-        private IAlchemyCoreServiceClient sessionAwareCoreServiceClient;
+        private readonly ImpersonationUserModel _impersonationUserModel;
 
-        private SessionAwareCoreServiceEndPoint defaultCoreServiceEndpoint;
+        private IAlchemyCoreServiceClient _sessionAwareCoreServiceClient;
+
+        private IAlchemyStreamUpload _sessionAwareCoreServiceUploadClient;
+
+        private IAlchemyStreamDownload _sessionAwareCoreServiceDownloadClient;
+
+        public AlchemyClients() { }
+
+        public AlchemyClients(string currentUser)
+        {
+            this._currentUser = currentUser;
+        }
+
+        public AlchemyClients(string currentUser, SessionAwareCoreServiceEndPoint endPoint)
+        {
+            this._currentUser = currentUser;
+            this.CoreServiceEndPoint = endPoint;
+        }
+
+        public AlchemyClients(string currentUser, SessionAwareCoreServiceEndPoint endPoint, ImpersonationUserModel impersonationUserModel)
+        {
+            this._currentUser = currentUser;
+            this.CoreServiceEndPoint = endPoint;
+            this._impersonationUserModel = impersonationUserModel;
+        }
 
         /// <summary>
         /// The default session aware core service endpoint to use.
         /// </summary>
-        public SessionAwareCoreServiceEndPoint DefaultCoreServiceEndPoint
-        {
-            get
-            {
-                return this.defaultCoreServiceEndpoint;
-            }
-            set
-            {
-                this.defaultCoreServiceEndpoint = value;
-            }
-        }
+        private SessionAwareCoreServiceEndPoint CoreServiceEndPoint { get; set; }
 
         /// <summary>
-        /// Gets a session aware core service client that can be used for scope duration.  Uses the DefaultCoreServiceEndPoint to open.
+        /// Gets a session aware core service client that can be used for scope duration.  Uses the CoreServiceEndPoint to open.
         /// </summary>
         public IAlchemyCoreServiceClient SessionAwareCoreServiceClient
         {
             get
             {
-                if (this.sessionAwareCoreServiceClient == null)
+                if (this._sessionAwareCoreServiceClient == null)
                 {
-                    
-                    this.sessionAwareCoreServiceClient = CreateSessionAwareCoreServiceClient(DefaultCoreServiceEndPoint);
+                    this._sessionAwareCoreServiceClient = CreateSessionAwareCoreServiceClient(CoreServiceEndPoint);
                 }
-                return this.sessionAwareCoreServiceClient;
+                return this._sessionAwareCoreServiceClient;
             }
         }
 
-        public AlchemyClients()
+        public IAlchemyStreamUpload SessionAwareCoreServiceUploadClient
         {
+            get
+            {
+                if (this._sessionAwareCoreServiceUploadClient == null)
+                {
+                    this._sessionAwareCoreServiceUploadClient = CreateSessionAwareCoreServiceUploadClient();
+                }
 
+                return this._sessionAwareCoreServiceUploadClient;
+            }
         }
 
-        public AlchemyClients(string currentUser)
+        public IAlchemyStreamDownload SessionAwareCoreServiceDownloadClient
         {
-            this.currentUser = currentUser;
-            this.defaultCoreServiceEndpoint = defaultCoreServiceEndpoint;
-        }
+            get
+            {
+                if (this._sessionAwareCoreServiceDownloadClient == null)
+                {
+                    this._sessionAwareCoreServiceDownloadClient = CreateSessionAwareCoreServiceDownloadClient(_impersonationUserModel);
+                }
 
-        public AlchemyClients(string currentUser, SessionAwareCoreServiceEndPoint endPoint)
-        {
-            this.currentUser = currentUser;
-            this.defaultCoreServiceEndpoint = endPoint;
+                return this._sessionAwareCoreServiceDownloadClient;
+            }
         }
 
         public IAlchemyCoreServiceClient CreateSessionAwareCoreServiceClient(SessionAwareCoreServiceEndPoint endpoint)
@@ -65,22 +90,34 @@ namespace Alchemy4Tridion.Plugins.Clients
             {
                 case SessionAwareCoreServiceEndPoint.NetTcp201501:
                     var client201501 = new AlchemyCoreServiceClient201501();
-                    client201501.Impersonate(this.currentUser);
+                    client201501.Impersonate(this._currentUser);
                     return client201501;
+                case SessionAwareCoreServiceEndPoint.NetTcp201603:
+                    var client201603 = new AlchemyCoreServiceClient201603();
+                    client201603.Impersonate(this._currentUser);
+                    return client201603;
                 default:
                     var client2013 = new AlchemyCoreServiceClient2013();
-                    client2013.Impersonate(this.currentUser);
+                    client2013.Impersonate(this._currentUser);
                     return client2013;
             }
-            
+        }
+
+        public IAlchemyStreamDownload CreateSessionAwareCoreServiceDownloadClient(ImpersonationUserModel impersonationUserModel)
+        {
+            return new AlchemyStreamDownloadClient201603(impersonationUserModel);
+        }
+
+        public IAlchemyStreamUpload CreateSessionAwareCoreServiceUploadClient()
+        {
+            return new AlchemyStreamUploadClient201603();
         }
 
         public void Dispose()
         {
-            if (this.sessionAwareCoreServiceClient != null)
-            {
-                this.sessionAwareCoreServiceClient.Dispose();
-            }
+            _sessionAwareCoreServiceClient?.Dispose();
+            _sessionAwareCoreServiceUploadClient?.Dispose();
+            _sessionAwareCoreServiceDownloadClient?.Dispose();
         }
     }
 }

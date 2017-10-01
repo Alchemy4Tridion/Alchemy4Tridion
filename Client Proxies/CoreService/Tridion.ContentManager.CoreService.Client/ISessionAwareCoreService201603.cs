@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-    [GeneratedCode("System.ServiceModel", "4.0.0.0"), ServiceContract(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201603", ConfigurationName = "Tridion.ContentManager.CoreService.Client.ISessionAwareCoreService", SessionMode = SessionMode.Required)]
+    [GeneratedCode("System.ServiceModel", "4.0.0.0"), ServiceContract(Namespace = "http://www.sdltridion.com/ContentManager/CoreService/201603", ConfigurationName = "Alchemy4Tridion.Plugins.Clients.CoreService.ISessionAwareCoreService201603", SessionMode = SessionMode.Required)]
     public interface ISessionAwareCoreService201603
     {
         [FaultContract(typeof(CoreServiceFault), Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/ICoreService/GetVirtualFolderTypeSchemaCoreServiceFaultFault", Name = "CoreServiceFault", Namespace = "http://www.sdltridion.com/ContentManager/R6"), OperationContract(Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/ICoreService/GetVirtualFolderTypeSchema", ReplyAction = "http://www.sdltridion.com/ContentManager/CoreService/201603/ICoreService/GetVirtualFolderTypeSchemaResponse")]

@@ -16,7 +16,11 @@ namespace Alchemy4Tridion.Plugins.Clients
          * SDL Web 8 end point
          */
         NetTcp201501,
-        NetTcp201603
+        NetTcp201603,
+
+        StreamUploadNetTcp201603,
+        StreamDownloadNetTcp201603
+
     }
 
     /// <summary>
