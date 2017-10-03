@@ -72,6 +72,8 @@
     <Compile Include="Clients\AlchemyCoreServiceClient201501.cs" />
     <Compile Include="Clients\AlchemySessionAwareCoreServiceClient.cs" />
     <Compile Include="Clients\AlchemyClients.cs" />
+    <Compile Include="Clients\AlchemyStreamDownloadClient201501.cs" />
+    <Compile Include="Clients\AlchemyStreamUploadClient201501.cs" />
     <Compile Include="Clients\IAlchemyCoreServiceClient.cs" />
     <Compile Include="Clients\AlchemyStreamDownloadClient201603.cs" />
     <Compile Include="Clients\AlchemyStreamUploadClient201603.cs" />
@@ -130,8 +132,9 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AlchemyRoutePrefixAttribute.cs" />
-    <Compile Include="Logging\Security\IUserService.cs" />
     <Compile Include="Clients\AlchemyCoreServiceClient2013.cs" />
+    <Compile Include="Security\IUserService.cs" />
+    <Compile Include="Utilities\CoreServiceUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -141,7 +144,6 @@
     <Folder Include="Components\" />
     <Folder Include="Content\DXA\" />
     <Folder Include="EventSystem\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Client Proxies\CoreService\Alchemy4Tridion.Plugins.Clients.CoreService.csproj">

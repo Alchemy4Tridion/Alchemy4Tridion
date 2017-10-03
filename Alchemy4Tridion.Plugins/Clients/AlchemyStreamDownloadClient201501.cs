@@ -8,24 +8,27 @@ using Alchemy4Tridion.Plugins.Models;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	public class AlchemyStreamDownloadClient201603 : IAlchemyStreamDownload, IDisposable
+	public class AlchemyStreamDownloadClient201501 : IAlchemyStreamDownload, IDisposable
 	{
-	    /// <summary>
-        /// Whether or not the dispose method has already been called.
-        /// </summary>
-        private bool _isDisposed = false;
 
         /// <summary>
-        /// CoreService Channel
+        /// Whether or not the dispose method has already been called.
         /// </summary>
-        public IStreamDownload201603 Channel { get; set; }
+        private bool isDisposed = false;
 
-        public AlchemyStreamDownloadClient201603(ImpersonationUserModel impersonationUserModel)
+        /// <summary>
+        /// 
+        /// </summary>
+        public IStreamDownload201501 Channel { get; set; }
+
+
+        public AlchemyStreamDownloadClient201501(ImpersonationUserModel impersonationUserModel)
         {
-            var factory = new ChannelFactory<IStreamDownload201603>("streamDownload_netTcp_201603");
+            var factory = new ChannelFactory<IStreamDownload201501>("streamDownload_netTcp_201501");
             factory.Credentials.Windows.ClientCredential = new NetworkCredential(impersonationUserModel.Username, impersonationUserModel.Password);
             factory.Credentials.Windows.AllowedImpersonationLevel = TokenImpersonationLevel.Impersonation;
-            Channel = factory.CreateChannel();
+            Channel = factory.CreateChannel(); 
+
         }
 
         #region CoreService Methods 
@@ -75,7 +78,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
             return await Task<Stream>.Factory.FromAsync(Channel.BeginDownloadExternalBinaryContent, Channel.EndDownloadExternalBinaryContent, uri, null);
 		}
 
-        #endregion  
+        #endregion
 
 
         /// <summary>
@@ -103,9 +106,9 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
             if (Channel != null)
             {
                 IStreamDownloadChannel channel = (IStreamDownloadChannel) Channel;
-                if (!this._isDisposed && disposing)
+                if (!this.isDisposed && disposing)
                 {
-                    this._isDisposed = true;
+                    this.isDisposed = true;
 
                     try
                     {

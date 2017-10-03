@@ -64,7 +64,7 @@ namespace Alchemy4Tridion.Plugins.Clients
             {
                 if (this._sessionAwareCoreServiceUploadClient == null)
                 {
-                    this._sessionAwareCoreServiceUploadClient = CreateSessionAwareCoreServiceUploadClient();
+                    this._sessionAwareCoreServiceUploadClient = CreateSessionAwareCoreServiceUploadClient(CoreServiceEndPoint);
                 }
 
                 return this._sessionAwareCoreServiceUploadClient;
@@ -77,7 +77,7 @@ namespace Alchemy4Tridion.Plugins.Clients
             {
                 if (this._sessionAwareCoreServiceDownloadClient == null)
                 {
-                    this._sessionAwareCoreServiceDownloadClient = CreateSessionAwareCoreServiceDownloadClient(_impersonationUserModel);
+                    this._sessionAwareCoreServiceDownloadClient = CreateSessionAwareCoreServiceDownloadClient(_impersonationUserModel, CoreServiceEndPoint);
                 }
 
                 return this._sessionAwareCoreServiceDownloadClient;
@@ -103,14 +103,31 @@ namespace Alchemy4Tridion.Plugins.Clients
             }
         }
 
-        public IAlchemyStreamDownload CreateSessionAwareCoreServiceDownloadClient(ImpersonationUserModel impersonationUserModel)
+        public IAlchemyStreamDownload CreateSessionAwareCoreServiceDownloadClient(ImpersonationUserModel impersonationUserModel, SessionAwareCoreServiceEndPoint endpoint)
         {
-            return new AlchemyStreamDownloadClient201603(impersonationUserModel);
+            switch (endpoint)
+            {
+                case SessionAwareCoreServiceEndPoint.NetTcp201501:
+                    return new AlchemyStreamDownloadClient201501(impersonationUserModel);
+                case SessionAwareCoreServiceEndPoint.NetTcp201603:
+                    return new AlchemyStreamDownloadClient201603(impersonationUserModel);
+                default:
+                    return new AlchemyStreamDownloadClient201501(impersonationUserModel);
+            }
+
         }
 
-        public IAlchemyStreamUpload CreateSessionAwareCoreServiceUploadClient()
+        public IAlchemyStreamUpload CreateSessionAwareCoreServiceUploadClient(SessionAwareCoreServiceEndPoint endpoint)
         {
-            return new AlchemyStreamUploadClient201603();
+            switch (endpoint)
+            {
+                case SessionAwareCoreServiceEndPoint.NetTcp201501:
+                    return new AlchemyStreamUploadClient201501();
+                case SessionAwareCoreServiceEndPoint.NetTcp201603:
+                    return new AlchemyStreamUploadClient201603();
+                default:
+                    return new AlchemyStreamUploadClient201501();
+            }
         }
 
         public void Dispose()

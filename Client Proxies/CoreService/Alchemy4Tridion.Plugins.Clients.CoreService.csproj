@@ -324,7 +324,9 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsExistingObjectCompletedEventArgs1.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsPublishedCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsPublishedCompletedEventArgs1.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload201501.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload201603.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload201501.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload201603.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\SystemPrivilege.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\NotificationMessage.cs" />
