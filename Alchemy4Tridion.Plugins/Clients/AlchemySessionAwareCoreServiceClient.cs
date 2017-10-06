@@ -17,10 +17,6 @@ namespace Alchemy4Tridion.Plugins.Clients
          */
         NetTcp201501,
         NetTcp201603,
-
-        StreamUploadNetTcp201603,
-        StreamDownloadNetTcp201603
-
     }
 
     /// <summary>

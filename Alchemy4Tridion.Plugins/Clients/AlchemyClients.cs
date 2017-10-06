@@ -1,6 +1,7 @@
 ﻿using Alchemy4Tridion.Plugins.Clients.CoreService;
 using System;
 using System.Net;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Principal;
 using Alchemy4Tridion.Plugins.Models;
 
@@ -38,10 +39,15 @@ namespace Alchemy4Tridion.Plugins.Clients
             this._impersonationUserModel = impersonationUserModel;
         }
 
+        public bool IsImpersonationUserSet()
+        {
+            return !string.IsNullOrEmpty(_impersonationUserModel?.Username) && !string.IsNullOrEmpty(this._impersonationUserModel.Password);
+        }
+
         /// <summary>
         /// The default session aware core service endpoint to use.
         /// </summary>
-        private SessionAwareCoreServiceEndPoint CoreServiceEndPoint { get; set; }
+        private SessionAwareCoreServiceEndPoint CoreServiceEndPoint { get; }
 
         /// <summary>
         /// Gets a session aware core service client that can be used for scope duration.  Uses the CoreServiceEndPoint to open.
@@ -81,6 +87,23 @@ namespace Alchemy4Tridion.Plugins.Clients
                 }
 
                 return this._sessionAwareCoreServiceDownloadClient;
+            }
+        }
+
+        /// <summary>
+        /// Get the Content Manager version in an enum.
+        /// </summary>
+        /// <returns></returns>
+        public TridionVersionsEnum GetContentManagerVersion()
+        {
+            switch (this.CoreServiceEndPoint)
+            {
+                case SessionAwareCoreServiceEndPoint.NetTcp201501:
+                    return TridionVersionsEnum.Web8;
+                case SessionAwareCoreServiceEndPoint.NetTcp201603:
+                    return TridionVersionsEnum.Web85;
+                default:
+                    return TridionVersionsEnum.Tridion2013SP1;
             }
         }
 

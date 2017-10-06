@@ -134,6 +134,7 @@
     <Compile Include="AlchemyRoutePrefixAttribute.cs" />
     <Compile Include="Clients\AlchemyCoreServiceClient2013.cs" />
     <Compile Include="Security\IUserService.cs" />
+    <Compile Include="TridionVersionsEnum.cs" />
     <Compile Include="Utilities\CoreServiceUtils.cs" />
   </ItemGroup>
   <ItemGroup>
