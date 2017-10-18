@@ -12,6 +12,8 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private bool? IncludeRootOrganizationalItemsColumnsField;
 
+		private bool? IncludeAllPublicationsForGroupManagementField;
+
 		[DataMember(EmitDefaultValue = false)]
 		public bool? IncludeWebDavUrlColumn
 		{
@@ -35,6 +37,19 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 			set
 			{
 				this.IncludeRootOrganizationalItemsColumnsField = value;
+			}
+		}
+
+		[DataMember(EmitDefaultValue = false, Order = 2)]
+		public bool? IncludeAllPublicationsForGroupManagement
+		{
+			get
+			{
+				return this.IncludeAllPublicationsForGroupManagementField;
+			}
+			set
+			{
+				this.IncludeAllPublicationsForGroupManagementField = value;
 			}
 		}
 	}

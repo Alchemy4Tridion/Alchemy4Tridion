@@ -6,7 +6,7 @@ using System.Xml.Linq;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "ItemFieldDefinitionData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(MultiLineTextFieldDefinitionData)), KnownType(typeof(SingleLineTextFieldDefinitionData)), KnownType(typeof(XhtmlFieldDefinitionData)), KnownType(typeof(NumberFieldDefinitionData)), KnownType(typeof(DateFieldDefinitionData)), KnownType(typeof(MultimediaLinkFieldDefinitionData)), KnownType(typeof(ComponentLinkFieldDefinitionData)), KnownType(typeof(ExternalLinkFieldDefinitionData)), KnownType(typeof(EmbeddedSchemaFieldDefinitionData)), KnownType(typeof(KeywordFieldDefinitionData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "ItemFieldDefinitionData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(ComponentLinkFieldDefinitionData)), KnownType(typeof(DateFieldDefinitionData)), KnownType(typeof(EmbeddedSchemaFieldDefinitionData)), KnownType(typeof(ExternalLinkFieldDefinitionData)), KnownType(typeof(KeywordFieldDefinitionData)), KnownType(typeof(MultiLineTextFieldDefinitionData)), KnownType(typeof(MultimediaLinkFieldDefinitionData)), KnownType(typeof(NumberFieldDefinitionData)), KnownType(typeof(SingleLineTextFieldDefinitionData)), KnownType(typeof(XhtmlFieldDefinitionData))]
 	public class ItemFieldDefinitionData : IExtensibleDataObject
 	{
 		private ExtensionDataObject extensionDataField;

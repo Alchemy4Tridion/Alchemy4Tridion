@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "WhereUsedFilterData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(UsedItemsFilterData)), KnownType(typeof(UsingItemsFilterData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "WhereUsedFilterData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(UsingItemsFilterData)), KnownType(typeof(UsedItemsFilterData))]
 	public class WhereUsedFilterData : SubjectRelatedListFilterData
 	{
 		private LinkToRepositoryData InRepositoryField;

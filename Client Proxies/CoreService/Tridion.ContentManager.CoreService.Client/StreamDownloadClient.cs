@@ -3,9 +3,11 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading;
+
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
@@ -36,12 +38,20 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private SendOrPostCallback onDownloadExternalBinaryContentCompletedDelegate;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<DownloadBinaryContentCompletedEventArgs> DownloadBinaryContentCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<DownloadBinaryContentByUserCompletedEventArgs> DownloadBinaryContentByUserCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<DownloadRenderedBinaryCompletedEventArgs> DownloadRenderedBinaryCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<DownloadExternalBinaryContentCompletedEventArgs> DownloadExternalBinaryContentCompleted;
 
 		public StreamDownloadClient()

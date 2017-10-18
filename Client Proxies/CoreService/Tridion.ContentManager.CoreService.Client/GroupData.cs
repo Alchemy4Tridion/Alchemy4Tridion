@@ -14,6 +14,10 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private LinkWithIsEditableToRepositoryData[] ScopeField;
 
+		private SystemPrivilegesDictionary InheritedSystemPrivilegesField;
+
+		private SystemPrivilege[] SystemPrivilegesField;
+
 		[DataMember(EmitDefaultValue = false)]
 		public ClaimMappingData[] ClaimMappings
 		{
@@ -50,6 +54,32 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 			set
 			{
 				this.ScopeField = value;
+			}
+		}
+
+		[DataMember(EmitDefaultValue = false, Order = 3)]
+		public SystemPrivilegesDictionary InheritedSystemPrivileges
+		{
+			get
+			{
+				return this.InheritedSystemPrivilegesField;
+			}
+			set
+			{
+				this.InheritedSystemPrivilegesField = value;
+			}
+		}
+
+		[DataMember(EmitDefaultValue = false, Order = 4)]
+		public SystemPrivilege[] SystemPrivileges
+		{
+			get
+			{
+				return this.SystemPrivilegesField;
+			}
+			set
+			{
+				this.SystemPrivilegesField = value;
 			}
 		}
 	}

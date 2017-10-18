@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "BasicVersionInfo", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(FullVersionInfo)), KnownType(typeof(LimitedVersionInfo))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "BasicVersionInfo", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(LimitedVersionInfo)), KnownType(typeof(FullVersionInfo))]
 	public class BasicVersionInfo : Info
 	{
 		private DateTime? CreationDateField;

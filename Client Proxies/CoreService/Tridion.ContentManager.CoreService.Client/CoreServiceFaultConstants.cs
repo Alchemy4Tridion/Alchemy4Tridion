@@ -337,6 +337,12 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 			public const string MismatchExpectedValueInDb = "MismatchExpectedValueInDb";
 
+			public const string LocalizeValidationFailed = "LocalizeValidationFailed";
+
+			public const string UnLocalizeValidationFailed = "UnLocalizeValidationFailed";
+
+			public const string MoveValidationFailed = "MoveValidationFailed";
+
 			public const string UnknownVFType = "UnknownVFType";
 
 			public const string ClassNotRegistered = "ClassNotRegistered";

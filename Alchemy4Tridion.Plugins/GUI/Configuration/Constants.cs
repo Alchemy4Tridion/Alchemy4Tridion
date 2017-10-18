@@ -239,8 +239,32 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration
         /// </summary>
         public static class Views
         {
-            public const string ComponentTemplateView = "ComponentTemplateView";
+            public const string ActivityInstanceView = "ActivityInstanceView";
+            public const string BusinessProcessTypeView = "BusinessProcessTypeView";
+            public const string CategoryView = "CategoryView";
             public const string ComponentView = "ComponentView";
+            public const string ControlRoomView = "ControlRoomView";
+            public const string CustomPageView = "CustomPageView";
+            public const string FolderView = "FolderView";
+            public const string HelpView = "HelpView";
+            public const string KeywordView = "KeywordView";
+            public const string ListFiltersView = "ListFiltersView";
+            public const string MultimediaTypeView = "MultimediaTypeView";
+            public const string PopupsView = "PopupsView";
+            public const string ProcessHistoryView = "ProcessHistoryView";
+            public const string ProcessInstanceView = "ProcessInstanceView";
+            public const string SitesView = "SitesView";
+            public const string SiteWizardView = "SiteWizardView";
+            public const string SplashScreenView = "SplashScreenView";
+            public const string StructureGroupView = "StructureGroupView";
+            public const string TargetGroupView = "TargetGroupView";
+            public const string TargetTypeView = "TargetTypeView";
+            public const string TemplateBuildingBlockView = "TemplateBuildingBlockView";
+            public const string UserAccountsView = "UserAccountsView";
+            public const string VirtualFolderView = "VirtualFolderView";
+            public const string WelcomeView = "WelcomeView";
+            public const string WorkflowActivitiesView = "WorkflowActivitiesView";
+            public const string ComponentTemplateView = "ComponentTemplateView";
             public const string DashboardView = "DashboardView";
             public const string PageTemplateView = "PageTemplateView";
             public const string PageView = "PageView";

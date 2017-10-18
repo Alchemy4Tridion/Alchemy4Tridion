@@ -3,6 +3,7 @@ using System;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Alchemy4Tridion.Plugins.Utilities;
 
 namespace Alchemy4Tridion.Plugins.Clients
 {
@@ -17,12 +18,10 @@ namespace Alchemy4Tridion.Plugins.Clients
     /// </remarks>
     public class AlchemyCoreServiceClient2013 : IDisposable, IAlchemyCoreServiceClient
     {
-        private ISessionAwareCoreService2013 channel;
-
         /// <summary>
         /// Whether or not the dispose method has already been called.
         /// </summary>
-        private bool isDisposed = false;
+        private bool _isDisposed = false;
 
         /// <summary>
         /// Gets which entpoint was used to create this core service client.
@@ -45,17 +44,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         /// <summary>
         /// Gets or sets the underlying core service client channel.
         /// </summary>
-        public ISessionAwareCoreService2013 Channel
-        {
-            get
-            {
-                return this.channel;
-            }
-            set
-            {
-                this.channel = value;
-            }
-        }
+        public ISessionAwareCoreService2013 Channel { get; set; }
 
         /// <summary>
         /// Creates a new SessionAwareCoreServiceClient using the supplied endpoint.
@@ -64,45 +53,10 @@ namespace Alchemy4Tridion.Plugins.Clients
         public AlchemyCoreServiceClient2013()
         {
             ClientEndpoint = SessionAwareCoreServiceEndPoint.NetTcp2013;
-            string endPointConfigName = GetEnpointConfigurationName(ClientEndpoint != null ? ClientEndpoint.Value : SessionAwareCoreServiceEndPoint.NetTcp2013);
+            string endPointConfigName = CoreServiceUtils.GetEndpointConfigurationName(ClientEndpoint != null ? ClientEndpoint.Value : SessionAwareCoreServiceEndPoint.NetTcp2013);
 
             var factory2013 = new ChannelFactory<ISessionAwareCoreService2013>(endPointConfigName);
             Channel = factory2013.CreateChannel();
-        }
-
-        /// <summary>
-        /// Gets the endpoint configuration name, defaulting to "netTcp_2013".
-        /// </summary>
-        /// <param name="endPoint"></param>
-        /// <returns></returns>
-        public static string GetEnpointConfigurationName(SessionAwareCoreServiceEndPoint endPoint)
-        {
-            switch (endPoint)
-            {
-                case SessionAwareCoreServiceEndPoint.NetTcp2011:
-                    return "netTcp_2011";
-                case SessionAwareCoreServiceEndPoint.NetTcp2012:
-                    return "netTcp_2012";
-                case SessionAwareCoreServiceEndPoint.NetTcp201501:
-                    return "netTcp_201501";
-                default:
-                    return "netTcp_2013";
-            }
-        }
-
-        public static SessionAwareCoreServiceEndPoint GetSessionAwareCoreServiceEndPoint(string endpointConfigurationName)
-        {
-            switch (endpointConfigurationName)
-            {
-                case "netTcp_2011":
-                    return SessionAwareCoreServiceEndPoint.NetTcp2011;
-                case "netTcp_2012":
-                    return SessionAwareCoreServiceEndPoint.NetTcp2012;
-                case "netTcp_201501":
-                    return SessionAwareCoreServiceEndPoint.NetTcp201501;
-                default:
-                    return SessionAwareCoreServiceEndPoint.NetTcp2013;
-            }
         }
 
         /// <summary>
@@ -130,9 +84,9 @@ namespace Alchemy4Tridion.Plugins.Clients
             if (Channel != null)
             {
                 IClientChannel channel = (IClientChannel)Channel;
-                if (!this.isDisposed && disposing)
+                if (!this._isDisposed && disposing)
                 {
-                    this.isDisposed = true;
+                    this._isDisposed = true;
 
 
                     try
@@ -1310,6 +1264,16 @@ namespace Alchemy4Tridion.Plugins.Clients
         public async Task EnlistInTransactionAsync()
         {
             await Task.Factory.FromAsync(Channel.BeginEnlistInTransaction, Channel.EndEnlistInTransaction, null);
+        }
+
+        public AccessTokenData GetCurrentUserWithToken()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AccessTokenData> GetCurrentUserWithTokenAsync()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
