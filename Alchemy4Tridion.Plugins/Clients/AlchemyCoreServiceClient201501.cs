@@ -3,6 +3,7 @@ using System;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Alchemy4Tridion.Plugins.Utilities;
 
 namespace Alchemy4Tridion.Plugins.Clients
 {
@@ -63,46 +64,13 @@ namespace Alchemy4Tridion.Plugins.Clients
         public AlchemyCoreServiceClient201501()
         {
             ClientEndpoint = SessionAwareCoreServiceEndPoint.NetTcp201501;
-            string endPointConfigName = GetEnpointConfigurationName(ClientEndpoint != null ? ClientEndpoint.Value : SessionAwareCoreServiceEndPoint.NetTcp201501);
+            string endPointConfigName = CoreServiceUtils.GetEndpointConfigurationName(ClientEndpoint ?? SessionAwareCoreServiceEndPoint.NetTcp201501);
 
             var factory2013 = new ChannelFactory<ISessionAwareCoreService201501>(endPointConfigName);
             Channel = factory2013.CreateChannel();
         }
 
-        /// <summary>
-        /// Gets the endpoint configuration name, defaulting to "netTcp_2013".
-        /// </summary>
-        /// <param name="endPoint"></param>
-        /// <returns></returns>
-        public static string GetEnpointConfigurationName(SessionAwareCoreServiceEndPoint endPoint)
-        {
-            switch (endPoint)
-            {
-                case SessionAwareCoreServiceEndPoint.NetTcp2011:
-                    return "netTcp_2011";
-                case SessionAwareCoreServiceEndPoint.NetTcp2012:
-                    return "netTcp_2012";
-                case SessionAwareCoreServiceEndPoint.NetTcp201501:
-                    return "netTcp_201501";
-                default:
-                    return "netTcp_2013";
-            }
-        }
 
-        public static SessionAwareCoreServiceEndPoint GetSessionAwareCoreServiceEndPoint(string endpointConfigurationName)
-        {
-            switch (endpointConfigurationName)
-            {
-                case "netTcp_2011":
-                    return SessionAwareCoreServiceEndPoint.NetTcp2011;
-                case "netTcp_2012":
-                    return SessionAwareCoreServiceEndPoint.NetTcp2012;
-                case "netTcp_201501":
-                    return SessionAwareCoreServiceEndPoint.NetTcp201501;
-                default:
-                    return SessionAwareCoreServiceEndPoint.NetTcp2013;
-            }
-        }
 
         /// <summary>
         /// Calls the dispose method.
@@ -374,6 +342,16 @@ namespace Alchemy4Tridion.Plugins.Clients
         public async Task<UserData> GetCurrentUserAsync()
         {
             return await Task<UserData>.Factory.FromAsync(Channel.BeginGetCurrentUser, Channel.EndGetCurrentUser, null);
+        }
+
+        public AccessTokenData GetCurrentUserWithToken()
+        {
+            return this.Channel.GetCurrentUser();
+        }
+
+        public async Task<AccessTokenData> GetCurrentUserWithTokenAsync()
+        {
+            return await Task<AccessTokenData>.Factory.FromAsync(Channel.BeginGetCurrentUser, Channel.EndGetCurrentUser, null);
         }
 
         public bool IsExistingObject(string id)

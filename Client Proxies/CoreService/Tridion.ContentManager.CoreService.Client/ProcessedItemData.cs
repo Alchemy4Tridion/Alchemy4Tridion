@@ -20,8 +20,6 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private ResolvedItemData ResolvedItemField;
 
-		private UndoState? UndoStateField;
-
 		public ExtensionDataObject ExtensionData
 		{
 			get
@@ -96,19 +94,6 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 			set
 			{
 				this.ResolvedItemField = value;
-			}
-		}
-
-		[DataMember(EmitDefaultValue = false)]
-		public UndoState? UndoState
-		{
-			get
-			{
-				return this.UndoStateField;
-			}
-			set
-			{
-				this.UndoStateField = value;
 			}
 		}
 	}

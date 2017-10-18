@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "TrusteeData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(UserData)), KnownType(typeof(GroupData)), KnownType(typeof(AccessTokenData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "TrusteeData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(UserData)), KnownType(typeof(AccessTokenData)), KnownType(typeof(GroupData))]
 	public class TrusteeData : SystemWideObjectData
 	{
 		private string DescriptionField;

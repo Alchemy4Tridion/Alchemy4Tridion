@@ -3,6 +3,7 @@ using Alchemy4Tridion.Plugins.Security;
 using System;
 using System.Diagnostics;
 using System.Web.Http;
+using Alchemy4Tridion.Plugins.Models;
 
 namespace Alchemy4Tridion.Plugins
 {
@@ -40,17 +41,25 @@ namespace Alchemy4Tridion.Plugins
         /// <summary>
         /// The session aware core service client.
         /// </summary>
-        private AlchemySessionAwareCoreServiceClient client;
+        private AlchemySessionAwareCoreServiceClient _client;
 
-        private AlchemyClients clients;
+        private AlchemyClients _clients;
+
+        private ImpersonationUserModel _impersonationUserModel;
 
         public SessionAwareCoreServiceEndPoint EndPoint
         {
-            get;
-            internal set;
+            get; internal set;
         }
 
+        public ImpersonationUserModel ImpersonationUserModel 
+        {
+            get; set;
+        }
+        
+
         /// <summary>
+        /// Deprecated - use .Clients instead.
         /// Gets or sets the session aware core service client. Will automatically create one impersonating the currently
         /// logged in user using the default end point (netTcp_2013) if not previously set. This client is dispose safe (and will automatically be
         /// disposed of by the ApiController at the end of the request if not already done so, so calling Client.Dispose() is not required).
@@ -64,16 +73,16 @@ namespace Alchemy4Tridion.Plugins
         {
             get
             {
-                if (this.client == null)
+                if (this._client == null)
                 {
-                    this.client = new AlchemySessionAwareCoreServiceClient();
-                    this.client.Impersonate(User.GetName());
+                    this._client = new AlchemySessionAwareCoreServiceClient();
+                    this._client.Impersonate(User.GetName());
                 }
-                return this.client;
+                return this._client;
             }
             set
             {
-                this.client = value;
+                this._client = value;
             }
         }
 
@@ -84,11 +93,18 @@ namespace Alchemy4Tridion.Plugins
         {
             get
             {
-                if (this.clients == null)
+                if (this._clients == null)
                 {
-                    this.clients = new AlchemyClients(User.GetName(), EndPoint);
+                    if (ImpersonationUserModel != null)
+                    {
+                        this._clients = new AlchemyClients(User.GetName(), EndPoint, ImpersonationUserModel);
+                    }
+                    else
+                    {
+                        this._clients = new AlchemyClients(User.GetName(), EndPoint);
+                    }
                 }
-                return this.clients;
+                return this._clients;
             }
         }
 
@@ -129,9 +145,9 @@ namespace Alchemy4Tridion.Plugins
         {
             if (disposing)
             {
-                if (this.client != null)
+                if (this._client != null)
                 {
-                    client.Dispose();
+                    _client.Dispose();
                 }
                 if (Clients != null)
                 {

@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "RepositoryData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(BluePrintNodeData)), KnownType(typeof(PublicationData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "RepositoryData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(PublicationData)), KnownType(typeof(BluePrintNodeData))]
 	public class RepositoryData : SystemWideObjectData
 	{
 		private AccessControlListData AccessControlListField;

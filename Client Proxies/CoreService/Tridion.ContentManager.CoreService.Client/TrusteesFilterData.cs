@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "TrusteesFilterData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(GroupsFilterData)), KnownType(typeof(UsersFilterData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "TrusteesFilterData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(UsersFilterData)), KnownType(typeof(GroupsFilterData))]
 	public class TrusteesFilterData : SystemWideListFilterData
 	{
 		private bool? IsPredefinedField;

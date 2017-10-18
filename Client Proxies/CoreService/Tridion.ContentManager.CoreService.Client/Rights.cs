@@ -8,7 +8,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 	public enum Rights
 	{
 		[EnumMember]
-		All = 262143,
+		All = 524287,
 		[EnumMember]
 		None = 0,
 		[EnumMember]
@@ -47,6 +47,8 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 		BundleManagement = 65536,
 		[EnumMember]
 		BusinessProcessTypeManagement = 131072,
+		[EnumMember]
+		PublicationAdministration = 262144,
 		[EnumMember]
 		UnknownByClient = -2147483648
 	}

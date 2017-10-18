@@ -14,8 +14,6 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 		[EnumMember]
 		Abort,
 		[EnumMember]
-		UndoCommit,
-		[EnumMember]
 		UnknownByClient = -2147483648
 	}
 }

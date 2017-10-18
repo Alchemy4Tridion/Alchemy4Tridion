@@ -3,9 +3,11 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading;
+
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
@@ -24,8 +26,12 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private SendOrPostCallback onUploadBinaryByteArrayCompletedDelegate;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UploadBinaryContentCompletedEventArgs> UploadBinaryContentCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UploadBinaryByteArrayCompletedEventArgs> UploadBinaryByteArrayCompleted;
 
 		public StreamUploadClient()
@@ -56,12 +62,11 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		public string UploadBinaryContent(AccessTokenData AccessToken, Stream UploadContent)
 		{
-			UploadResponse uploadResponse = ((IStreamUpload)this).UploadBinaryContent(new UploadRequest
+			return ((IStreamUpload)this).UploadBinaryContent(new UploadRequest
 			{
 				AccessToken = AccessToken,
 				UploadContent = UploadContent
-			});
-			return uploadResponse.FilePath;
+			}).FilePath;
 		}
 
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
@@ -89,8 +94,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		public string EndUploadBinaryContent(IAsyncResult result)
 		{
-			UploadResponse uploadResponse = ((IStreamUpload)this).EndUploadBinaryContent(result);
-			return uploadResponse.FilePath;
+			return ((IStreamUpload)this).EndUploadBinaryContent(result).FilePath;
 		}
 
 		private IAsyncResult OnBeginUploadBinaryContent(object[] inValues, AsyncCallback callback, object asyncState)

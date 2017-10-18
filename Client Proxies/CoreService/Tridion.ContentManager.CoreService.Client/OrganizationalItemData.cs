@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "OrganizationalItemData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(ResolvedBundleData)), KnownType(typeof(FolderData)), KnownType(typeof(CategoryData)), KnownType(typeof(BusinessProcessTypeData)), KnownType(typeof(VirtualFolderData)), KnownType(typeof(StructureGroupData))]
+	[GeneratedCode("System.Runtime.Serialization", "4.0.0.0"), DebuggerStepThrough, DataContract(Name = "OrganizationalItemData", Namespace = "http://www.sdltridion.com/ContentManager/R6"), KnownType(typeof(FolderData)), KnownType(typeof(StructureGroupData)), KnownType(typeof(VirtualFolderData)), KnownType(typeof(ResolvedBundleData)), KnownType(typeof(CategoryData)), KnownType(typeof(BusinessProcessTypeData))]
 	public class OrganizationalItemData : RepositoryLocalObjectData
 	{
 		private AccessControlListData AccessControlListField;

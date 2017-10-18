@@ -52,6 +52,7 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\AccessControlEntryData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\AccessControlListData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\AccessTokenData.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\AccessTokenDataExtensions.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ActionFlags.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\Actions.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ActivityConstraints.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\BluePrintParentsFilterData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\BulkReadCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\BulkReadCompletedEventArgs1.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\BundleSchemasFilterData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\BundleTypeData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\BusinessProcessTypeData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\CastActionsCompletedEventArgs.cs" />
@@ -195,9 +197,11 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\DownloadRenderedBinaryCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\DynamicVersionInfo.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\DynamicVersionResolvingConditions.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\ElevatedPrivilegesScope.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ElevatePrivilegesCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\EmbeddedSchemaFieldDefinitionData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ExpandableLinkToSchemaData.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\ExpandableLinkToTridionActivityDefinitionData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ExtensionPropertyDictionary.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ExternalLinkFieldDefinitionData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ExternalUser.cs" />
@@ -279,6 +283,8 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\GetSessionTransactionTimeoutCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\GetSubjectIdsWithApplicationDataCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\GetSubjectIdsWithApplicationDataCompletedEventArgs1.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\GetSystemPrivilegesCompletedEventArgs.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\GetSystemPrivilegesCompletedEventArgs1.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\GetSystemWideListCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\GetSystemWideListCompletedEventArgs1.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\GetSystemWideListXmlCompletedEventArgs.cs" />
@@ -310,6 +316,7 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\InstanceData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService2013.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService201603.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreService201501.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreServiceBase.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\ISessionAwareCoreServiceChannel.cs" />
@@ -317,6 +324,12 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsExistingObjectCompletedEventArgs1.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsPublishedCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IsPublishedCompletedEventArgs1.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload201501.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload201603.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload201501.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload201603.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\SystemPrivilege.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\NotificationMessage.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownloadChannel.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload.cs" />
@@ -548,6 +561,7 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\SynchronizeWithSchemaAndUpdateCompletedEventArgs1.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\SynchronizeWithSchemaCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\SynchronizeWithSchemaCompletedEventArgs1.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\SystemPrivilegesDictionary.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\SystemWideListFilterData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\SystemWideObjectData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\TargetDestinationData.cs" />
@@ -558,6 +572,7 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\TaxonomiesFilterData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\TaxonomiesOwlFilterData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\TcmAction.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\TcmSystemPrivileges.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\TemplateBuildingBlockData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\TemplateData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\TemplateType.cs" />

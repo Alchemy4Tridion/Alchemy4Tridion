@@ -2,6 +2,7 @@ using System;
 using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading;
@@ -9,7 +10,6 @@ using System.Xml.Linq;
 
 namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
-	[GeneratedCode("System.ServiceModel", "4.0.0.0"), DebuggerStepThrough]
 	public class SessionAwareCoreServiceClient : ClientBase<ISessionAwareCoreService>, ISessionAwareCoreService, IDisposable
 	{
 		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginGetVirtualFolderTypeSchemaDelegate;
@@ -83,12 +83,6 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 		private ClientBase<ISessionAwareCoreService>.EndOperationDelegate onEndStartWorkflowDelegate;
 
 		private SendOrPostCallback onStartWorkflowCompletedDelegate;
-
-		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginUndoPublishTransactionDelegate;
-
-		private ClientBase<ISessionAwareCoreService>.EndOperationDelegate onEndUndoPublishTransactionDelegate;
-
-		private SendOrPostCallback onUndoPublishTransactionCompletedDelegate;
 
 		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginGetProcessDefinitionsForItemsDelegate;
 
@@ -179,6 +173,18 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 		private ClientBase<ISessionAwareCoreService>.EndOperationDelegate onEndPurgeWorkflowHistoryDelegate;
 
 		private SendOrPostCallback onPurgeWorkflowHistoryCompletedDelegate;
+
+		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginBroadcastNotificationDelegate;
+
+		private ClientBase<ISessionAwareCoreService>.EndOperationDelegate onEndBroadcastNotificationDelegate;
+
+		private SendOrPostCallback onBroadcastNotificationCompletedDelegate;
+
+		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginGetSystemPrivilegesDelegate;
+
+		private ClientBase<ISessionAwareCoreService>.EndOperationDelegate onEndGetSystemPrivilegesDelegate;
+
+		private SendOrPostCallback onGetSystemPrivilegesCompletedDelegate;
 
 		private ClientBase<ISessionAwareCoreService>.BeginOperationDelegate onBeginGetApiVersionDelegate;
 
@@ -774,258 +780,516 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 
 		private SendOrPostCallback onRestorePrivilegesCompletedDelegate;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetVirtualFolderTypeSchemaCompletedEventArgs> GetVirtualFolderTypeSchemaCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetEnumValuesCompletedEventArgs> GetEnumValuesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ResolveBundleTypesCompletedEventArgs> ResolveBundleTypesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CopyToKeywordCompletedEventArgs> CopyToKeywordCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<MoveToKeywordCompletedEventArgs> MoveToKeywordCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetTridionLanguagesCompletedEventArgs> GetTridionLanguagesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListWorkflowScriptTypesCompletedEventArgs> GetListWorkflowScriptTypesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AddToWorkflowCompletedEventArgs> AddToWorkflowCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<RemoveFromWorkflowCompletedEventArgs> RemoveFromWorkflowCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<LockCompletedEventArgs> LockCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UnlockCompletedEventArgs> UnlockCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<StartWorkflowCompletedEventArgs> StartWorkflowCompleted;
 
-		public event EventHandler<UndoPublishTransactionCompletedEventArgs> UndoPublishTransactionCompleted;
-
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetProcessDefinitionsForItemsCompletedEventArgs> GetProcessDefinitionsForItemsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSystemXsdCompletedEventArgs> GetSystemXsdCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSchemasByNamespaceUriCompletedEventArgs> GetSchemasByNamespaceUriCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ValidateCompletedEventArgs> ValidateCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetExternalBinaryContentDataCompletedEventArgs> GetExternalBinaryContentDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<SynchronizeWithSchemaCompletedEventArgs> SynchronizeWithSchemaCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<SynchronizeWithSchemaAndUpdateCompletedEventArgs> SynchronizeWithSchemaAndUpdateCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> DecommissionPublicationTargetCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ConvertXsdToSchemaFieldsCompletedEventArgs> ConvertXsdToSchemaFieldsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetPublishUrlCompletedEventArgs> GetPublishUrlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetBusinessProcessTypesCompletedEventArgs> GetBusinessProcessTypesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetPublishSourceByUrlCompletedEventArgs> GetPublishSourceByUrlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> RemovePublishStatesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ResolveContainingPagesCompletedEventArgs> ResolveContainingPagesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> PurgeWorkflowHistoryCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
+		public event EventHandler<AsyncCompletedEventArgs> BroadcastNotificationCompleted;
+
+		[method: CompilerGenerated]
+		[CompilerGenerated]
+		public event EventHandler<GetSystemPrivilegesCompletedEventArgs> GetSystemPrivilegesCompleted;
+
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetApiVersionCompletedEventArgs> GetApiVersionCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetCurrentUserCompletedEventArgs> GetCurrentUserCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<IsExistingObjectCompletedEventArgs> IsExistingObjectCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetTcmUriCompletedEventArgs> GetTcmUriCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<TryGetTcmUriCompletedEventArgs> TryGetTcmUriCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReadCompletedEventArgs> ReadCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<TryReadCompletedEventArgs> TryReadCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<BulkReadCompletedEventArgs> BulkReadCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReadSchemaFieldsCompletedEventArgs> ReadSchemaFieldsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ConvertSchemaFieldsToXsdCompletedEventArgs> ConvertSchemaFieldsToXsdCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<SaveCompletedEventArgs> SaveCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> DeleteCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> DeleteTaxonomyNodeCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetDefaultDataCompletedEventArgs> GetDefaultDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<MoveCompletedEventArgs> MoveCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CopyCompletedEventArgs> CopyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetInstanceDataCompletedEventArgs> GetInstanceDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<TryCheckOutCompletedEventArgs> TryCheckOutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CheckOutCompletedEventArgs> CheckOutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CheckInCompletedEventArgs> CheckInCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UpdateCompletedEventArgs> UpdateCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CreateCompletedEventArgs> CreateCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UndoCheckOutCompletedEventArgs> UndoCheckOutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<RollbackCompletedEventArgs> RollbackCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<LocalizeCompletedEventArgs> LocalizeCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UnLocalizeCompletedEventArgs> UnLocalizeCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<PromoteCompletedEventArgs> PromoteCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<DemoteCompletedEventArgs> DemoteCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListTemplateTypesCompletedEventArgs> GetListTemplateTypesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListPublicationTypesCompletedEventArgs> GetListPublicationTypesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSystemWideListXmlCompletedEventArgs> GetSystemWideListXmlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSystemWideListCompletedEventArgs> GetSystemWideListCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListXmlCompletedEventArgs> GetListXmlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListCompletedEventArgs> GetListCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListDirectoryServiceNamesCompletedEventArgs> GetListDirectoryServiceNamesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListWindowsDomainUsersCompletedEventArgs> GetListWindowsDomainUsersCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListDirectoryServiceAllUsersCompletedEventArgs> GetListDirectoryServiceAllUsersCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListDirectoryServiceGroupMembersCompletedEventArgs> GetListDirectoryServiceGroupMembersCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListDirectoryServiceUsersCompletedEventArgs> GetListDirectoryServiceUsersCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ClassifyCompletedEventArgs> ClassifyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UnClassifyCompletedEventArgs> UnClassifyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReClassifyCompletedEventArgs> ReClassifyCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<StartActivityCompletedEventArgs> StartActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<SuspendActivityCompletedEventArgs> SuspendActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<RestartActivityCompletedEventArgs> RestartActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReAssignActivityCompletedEventArgs> ReAssignActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<FinishActivityCompletedEventArgs> FinishActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ForceFinishProcessCompletedEventArgs> ForceFinishProcessCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ResumeActivityCompletedEventArgs> ResumeActivityCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListQueueMessagesCompletedEventArgs> GetListQueueMessagesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> PurgeQueueCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListQueuesCompletedEventArgs> GetListQueuesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReadApplicationDataCompletedEventArgs> ReadApplicationDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReadAllApplicationDataCompletedEventArgs> ReadAllApplicationDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> SaveApplicationDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> DeleteApplicationDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetApplicationIdsCompletedEventArgs> GetApplicationIdsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> PurgeApplicationDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ParsePredefinedBatchOperationCompletedEventArgs> ParsePredefinedBatchOperationCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetPredefinedBatchOperationNameCompletedEventArgs> GetPredefinedBatchOperationNameCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ResolveItemsCompletedEventArgs> ResolveItemsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSearchResultsXmlCompletedEventArgs> GetSearchResultsXmlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSearchResultsXmlPagedCompletedEventArgs> GetSearchResultsXmlPagedCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSearchResultsCompletedEventArgs> GetSearchResultsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSearchResultsPagedCompletedEventArgs> GetSearchResultsPagedCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<RenderItemCompletedEventArgs> RenderItemCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<PreviewItemCompletedEventArgs> PreviewItemCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<PublishCompletedEventArgs> PublishCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<UnPublishCompletedEventArgs> UnPublishCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<IsPublishedCompletedEventArgs> IsPublishedCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetWorkItemSnapshotCompletedEventArgs> GetWorkItemSnapshotCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListPublishInfoCompletedEventArgs> GetListPublishInfoCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CastActionsCompletedEventArgs> CastActionsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> ValidateXmlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<IsValidTridionWebSchemaXmlCompletedEventArgs> IsValidTridionWebSchemaXmlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSubjectIdsWithApplicationDataCompletedEventArgs> GetSubjectIdsWithApplicationDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ReadApplicationDataForSubjectsIdsCompletedEventArgs> ReadApplicationDataForSubjectsIdsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSecurityDescriptorsForSubjectsIdsCompletedEventArgs> GetSecurityDescriptorsForSubjectsIdsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetContentSecurityDescriptorsForOrgItemIdsCompletedEventArgs> GetContentSecurityDescriptorsForOrgItemIdsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> ReIndexCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<CastPredefinedQueueCompletedEventArgs> CastPredefinedQueueCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<PurgeOldVersionsCompletedEventArgs> PurgeOldVersionsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetListExternalLinksCompletedEventArgs> GetListExternalLinksCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ConvertXmlToSearchQueryCompletedEventArgs> ConvertXmlToSearchQueryCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ConvertSearchQueryToXmlCompletedEventArgs> ConvertSearchQueryToXmlCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ImpersonateCompletedEventArgs> ImpersonateCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> ImpersonateWithTokenCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ImpersonateWithClaimsCompletedEventArgs> ImpersonateWithClaimsCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> TerminateSessionCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSessionIdCompletedEventArgs> GetSessionIdCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> SetSessionContextDataCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> SetSessionTransactionTimeoutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<GetSessionTransactionTimeoutCompletedEventArgs> GetSessionTransactionTimeoutCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<StartCachingCompletedEventArgs> StartCachingCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> StopCachingCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> SetWebDavUrlPrefixCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<AsyncCompletedEventArgs> EnlistInTransactionCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<ElevatePrivilegesCompletedEventArgs> ElevatePrivilegesCompleted;
 
+		[method: CompilerGenerated]
+		[CompilerGenerated]
 		public event EventHandler<RestorePrivilegesCompletedEventArgs> RestorePrivilegesCompleted;
 
 		public SessionAwareCoreServiceClient()
@@ -1854,76 +2118,6 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 				instruction,
 				readBackOptions
 			}, this.onEndStartWorkflowDelegate, this.onStartWorkflowCompletedDelegate, userState);
-		}
-
-		public PublishTransactionData UndoPublishTransaction(string publishTransactionId, QueueMessagePriority? priority, ReadOptions readBackOptions)
-		{
-			return base.Channel.UndoPublishTransaction(publishTransactionId, priority, readBackOptions);
-		}
-
-		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		public IAsyncResult BeginUndoPublishTransaction(string publishTransactionId, QueueMessagePriority? priority, ReadOptions readBackOptions, AsyncCallback callback, object asyncState)
-		{
-			return base.Channel.BeginUndoPublishTransaction(publishTransactionId, priority, readBackOptions, callback, asyncState);
-		}
-
-		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		public PublishTransactionData EndUndoPublishTransaction(IAsyncResult result)
-		{
-			return base.Channel.EndUndoPublishTransaction(result);
-		}
-
-		private IAsyncResult OnBeginUndoPublishTransaction(object[] inValues, AsyncCallback callback, object asyncState)
-		{
-			string publishTransactionId = (string)inValues[0];
-			QueueMessagePriority? priority = (QueueMessagePriority?)inValues[1];
-			ReadOptions readBackOptions = (ReadOptions)inValues[2];
-			return this.BeginUndoPublishTransaction(publishTransactionId, priority, readBackOptions, callback, asyncState);
-		}
-
-		private object[] OnEndUndoPublishTransaction(IAsyncResult result)
-		{
-			PublishTransactionData publishTransactionData = this.EndUndoPublishTransaction(result);
-			return new object[]
-			{
-				publishTransactionData
-			};
-		}
-
-		private void OnUndoPublishTransactionCompleted(object state)
-		{
-			if (this.UndoPublishTransactionCompleted != null)
-			{
-				ClientBase<ISessionAwareCoreService>.InvokeAsyncCompletedEventArgs invokeAsyncCompletedEventArgs = (ClientBase<ISessionAwareCoreService>.InvokeAsyncCompletedEventArgs)state;
-				this.UndoPublishTransactionCompleted(this, new UndoPublishTransactionCompletedEventArgs(invokeAsyncCompletedEventArgs.Results, invokeAsyncCompletedEventArgs.Error, invokeAsyncCompletedEventArgs.Cancelled, invokeAsyncCompletedEventArgs.UserState));
-			}
-		}
-
-		public void UndoPublishTransactionAsync(string publishTransactionId, QueueMessagePriority? priority, ReadOptions readBackOptions)
-		{
-			this.UndoPublishTransactionAsync(publishTransactionId, priority, readBackOptions, null);
-		}
-
-		public void UndoPublishTransactionAsync(string publishTransactionId, QueueMessagePriority? priority, ReadOptions readBackOptions, object userState)
-		{
-			if (this.onBeginUndoPublishTransactionDelegate == null)
-			{
-				this.onBeginUndoPublishTransactionDelegate = new ClientBase<ISessionAwareCoreService>.BeginOperationDelegate(this.OnBeginUndoPublishTransaction);
-			}
-			if (this.onEndUndoPublishTransactionDelegate == null)
-			{
-				this.onEndUndoPublishTransactionDelegate = new ClientBase<ISessionAwareCoreService>.EndOperationDelegate(this.OnEndUndoPublishTransaction);
-			}
-			if (this.onUndoPublishTransactionCompletedDelegate == null)
-			{
-				this.onUndoPublishTransactionCompletedDelegate = new SendOrPostCallback(this.OnUndoPublishTransactionCompleted);
-			}
-			base.InvokeAsync(this.onBeginUndoPublishTransactionDelegate, new object[]
-			{
-				publishTransactionId,
-				priority,
-				readBackOptions
-			}, this.onEndUndoPublishTransactionDelegate, this.onUndoPublishTransactionCompletedDelegate, userState);
 		}
 
 		public ProcessDefinitionAssociationDictionary GetProcessDefinitionsForItems(string[] itemIds, ProcessDefinitionType processDefinitionType)
@@ -2927,6 +3121,131 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 			{
 				instruction
 			}, this.onEndPurgeWorkflowHistoryDelegate, this.onPurgeWorkflowHistoryCompletedDelegate, userState);
+		}
+
+		public void BroadcastNotification(NotificationMessage notification)
+		{
+			base.Channel.BroadcastNotification(notification);
+		}
+
+		[EditorBrowsable(EditorBrowsableState.Advanced)]
+		public IAsyncResult BeginBroadcastNotification(NotificationMessage notification, AsyncCallback callback, object asyncState)
+		{
+			return base.Channel.BeginBroadcastNotification(notification, callback, asyncState);
+		}
+
+		[EditorBrowsable(EditorBrowsableState.Advanced)]
+		public void EndBroadcastNotification(IAsyncResult result)
+		{
+			base.Channel.EndBroadcastNotification(result);
+		}
+
+		private IAsyncResult OnBeginBroadcastNotification(object[] inValues, AsyncCallback callback, object asyncState)
+		{
+			NotificationMessage notification = (NotificationMessage)inValues[0];
+			return this.BeginBroadcastNotification(notification, callback, asyncState);
+		}
+
+		private object[] OnEndBroadcastNotification(IAsyncResult result)
+		{
+			this.EndBroadcastNotification(result);
+			return null;
+		}
+
+		private void OnBroadcastNotificationCompleted(object state)
+		{
+			if (this.BroadcastNotificationCompleted != null)
+			{
+				ClientBase<ISessionAwareCoreService>.InvokeAsyncCompletedEventArgs invokeAsyncCompletedEventArgs = (ClientBase<ISessionAwareCoreService>.InvokeAsyncCompletedEventArgs)state;
+				this.BroadcastNotificationCompleted(this, new AsyncCompletedEventArgs(invokeAsyncCompletedEventArgs.Error, invokeAsyncCompletedEventArgs.Cancelled, invokeAsyncCompletedEventArgs.UserState));
+			}
+		}
+
+		public void BroadcastNotificationAsync(NotificationMessage notification)
+		{
+			this.BroadcastNotificationAsync(notification, null);
+		}
+
+		public void BroadcastNotificationAsync(NotificationMessage notification, object userState)
+		{
+			if (this.onBeginBroadcastNotificationDelegate == null)
+			{
+				this.onBeginBroadcastNotificationDelegate = new ClientBase<ISessionAwareCoreService>.BeginOperationDelegate(this.OnBeginBroadcastNotification);
+			}
+			if (this.onEndBroadcastNotificationDelegate == null)
+			{
+				this.onEndBroadcastNotificationDelegate = new ClientBase<ISessionAwareCoreService>.EndOperationDelegate(this.OnEndBroadcastNotification);
+			}
+			if (this.onBroadcastNotificationCompletedDelegate == null)
+			{
+				this.onBroadcastNotificationCompletedDelegate = new SendOrPostCallback(this.OnBroadcastNotificationCompleted);
+			}
+			base.InvokeAsync(this.onBeginBroadcastNotificationDelegate, new object[]
+			{
+				notification
+			}, this.onEndBroadcastNotificationDelegate, this.onBroadcastNotificationCompletedDelegate, userState);
+		}
+
+		public SystemPrivilege[] GetSystemPrivileges()
+		{
+			return base.Channel.GetSystemPrivileges();
+		}
+
+		[EditorBrowsable(EditorBrowsableState.Advanced)]
+		public IAsyncResult BeginGetSystemPrivileges(AsyncCallback callback, object asyncState)
+		{
+			return base.Channel.BeginGetSystemPrivileges(callback, asyncState);
+		}
+
+		[EditorBrowsable(EditorBrowsableState.Advanced)]
+		public SystemPrivilege[] EndGetSystemPrivileges(IAsyncResult result)
+		{
+			return base.Channel.EndGetSystemPrivileges(result);
+		}
+
+		private IAsyncResult OnBeginGetSystemPrivileges(object[] inValues, AsyncCallback callback, object asyncState)
+		{
+			return this.BeginGetSystemPrivileges(callback, asyncState);
+		}
+
+		private object[] OnEndGetSystemPrivileges(IAsyncResult result)
+		{
+			SystemPrivilege[] array = this.EndGetSystemPrivileges(result);
+			return new object[]
+			{
+				array
+			};
+		}
+
+		private void OnGetSystemPrivilegesCompleted(object state)
+		{
+			if (this.GetSystemPrivilegesCompleted != null)
+			{
+				ClientBase<ISessionAwareCoreService>.InvokeAsyncCompletedEventArgs invokeAsyncCompletedEventArgs = (ClientBase<ISessionAwareCoreService>.InvokeAsyncCompletedEventArgs)state;
+				this.GetSystemPrivilegesCompleted(this, new GetSystemPrivilegesCompletedEventArgs(invokeAsyncCompletedEventArgs.Results, invokeAsyncCompletedEventArgs.Error, invokeAsyncCompletedEventArgs.Cancelled, invokeAsyncCompletedEventArgs.UserState));
+			}
+		}
+
+		public void GetSystemPrivilegesAsync()
+		{
+			this.GetSystemPrivilegesAsync(null);
+		}
+
+		public void GetSystemPrivilegesAsync(object userState)
+		{
+			if (this.onBeginGetSystemPrivilegesDelegate == null)
+			{
+				this.onBeginGetSystemPrivilegesDelegate = new ClientBase<ISessionAwareCoreService>.BeginOperationDelegate(this.OnBeginGetSystemPrivileges);
+			}
+			if (this.onEndGetSystemPrivilegesDelegate == null)
+			{
+				this.onEndGetSystemPrivilegesDelegate = new ClientBase<ISessionAwareCoreService>.EndOperationDelegate(this.OnEndGetSystemPrivileges);
+			}
+			if (this.onGetSystemPrivilegesCompletedDelegate == null)
+			{
+				this.onGetSystemPrivilegesCompletedDelegate = new SendOrPostCallback(this.OnGetSystemPrivilegesCompleted);
+			}
+			base.InvokeAsync(this.onBeginGetSystemPrivilegesDelegate, null, this.onEndGetSystemPrivilegesDelegate, this.onGetSystemPrivilegesCompletedDelegate, userState);
 		}
 
 		public string GetApiVersion()
