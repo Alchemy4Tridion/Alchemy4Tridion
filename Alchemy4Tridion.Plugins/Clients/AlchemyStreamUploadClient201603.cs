@@ -30,14 +30,14 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
             private set;
         }
 
-	    UploadResponse IAlchemyStreamUpload.UploadBinaryContent(UploadRequest request)
+	    IUploadResponse IAlchemyStreamUpload.UploadBinaryContent(IUploadRequest request)
 		{
-			return Channel.UploadBinaryContent(request);
+			return Channel.UploadBinaryContent((UploadRequest201603) request);
 		}
 
         public string UploadBinaryContent(AccessTokenData AccessToken, Stream UploadContent)
         {
-            return Channel.UploadBinaryContent(new UploadRequest
+            return Channel.UploadBinaryContent(new UploadRequest201603
             {
                 AccessToken = AccessToken,
                 UploadContent = UploadContent

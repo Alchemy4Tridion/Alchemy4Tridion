@@ -130,7 +130,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         
         public TridionEnumValue[] GetEnumValues(string type)
         {
-            return this.Channel.GetEnumValues(type);
+            return Channel.GetEnumValues(type);
         }
 
         
@@ -144,7 +144,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public BundleTypeData[] ResolveBundleTypes(string[] itemIds, bool pruneTree)
         {
-            return this.Channel.ResolveBundleTypes(itemIds, pruneTree);
+            return Channel.ResolveBundleTypes(itemIds, pruneTree);
         }
 
         
@@ -158,7 +158,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public KeywordData CopyToKeyword(string sourceKeywordId, string destinationId, ReadOptions readBackOptions)
         {
-            return this.Channel.CopyToKeyword(sourceKeywordId, destinationId, readBackOptions);
+            return Channel.CopyToKeyword(sourceKeywordId, destinationId, readBackOptions);
         }
 
         
@@ -171,7 +171,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public KeywordData MoveToKeyword(string sourceKeywordId, string destinationId, ReadOptions readBackOptions)
         {
-            return this.Channel.MoveToKeyword(sourceKeywordId, destinationId, readBackOptions);
+            return Channel.MoveToKeyword(sourceKeywordId, destinationId, readBackOptions);
         }
 
        
@@ -185,7 +185,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public TridionLanguageInfo[] GetTridionLanguages()
         {
-            return this.Channel.GetTridionLanguages();
+            return Channel.GetTridionLanguages();
         }
 
        
@@ -199,7 +199,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public WorkflowScriptType[] GetListWorkflowScriptTypes()
         {
-            return this.Channel.GetListWorkflowScriptTypes();
+            return Channel.GetListWorkflowScriptTypes();
         }
 
         
@@ -213,7 +213,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public WorkItemData[] AddToWorkflow(string[] subjectIds, string activityInstanceId, ReadOptions readBackOptions)
         {
-            return this.Channel.AddToWorkflow(subjectIds, activityInstanceId, readBackOptions);
+            return Channel.AddToWorkflow(subjectIds, activityInstanceId, readBackOptions);
         }
 
        
@@ -225,7 +225,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public WorkItemData[] RemoveFromWorkflow(string[] subjectIds, ReadOptions readBackOptions)
         {
-            return this.Channel.RemoveFromWorkflow(subjectIds, readBackOptions);
+            return Channel.RemoveFromWorkflow(subjectIds, readBackOptions);
         }
 
        
@@ -238,7 +238,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         
         public OrganizationalItemData Lock(string organizationalItemId, ReadOptions readBackOptions)
         {
-            return this.Channel.Lock(organizationalItemId, readBackOptions);
+            return Channel.Lock(organizationalItemId, readBackOptions);
         }
 
         
@@ -252,7 +252,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public OrganizationalItemData Unlock(string organizationalItemId, ReadOptions readBackOptions)
         {
-            return this.Channel.Unlock(organizationalItemId, readBackOptions);
+            return Channel.Unlock(organizationalItemId, readBackOptions);
         }
 
        
@@ -266,7 +266,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ProcessInstanceData StartWorkflow(string repositoryId, StartWorkflowInstructionData instruction, ReadOptions readBackOptions)
         {
-            return this.Channel.StartWorkflow(repositoryId, instruction, readBackOptions);
+            return Channel.StartWorkflow(repositoryId, instruction, readBackOptions);
         }
 
       
@@ -280,7 +280,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ProcessDefinitionAssociationDictionary GetProcessDefinitionsForItems(string[] itemIds, ProcessDefinitionType processDefinitionType)
         {
-            return this.Channel.GetProcessDefinitionsForItems(itemIds, processDefinitionType);
+            return Channel.GetProcessDefinitionsForItems(itemIds, processDefinitionType);
         }
 
         
@@ -293,7 +293,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string GetSystemXsd(string filename)
         {
-            return this.Channel.GetSystemXsd(filename);
+            return Channel.GetSystemXsd(filename);
         }
 
         
@@ -307,7 +307,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public LinkToSchemaData[] GetSchemasByNamespaceUri(string repositoryId, string namespaceUri, string rootElementName)
         {
-            return this.Channel.GetSchemasByNamespaceUri(repositoryId, namespaceUri, rootElementName);
+            return Channel.GetSchemasByNamespaceUri(repositoryId, namespaceUri, rootElementName);
         }
 
        
@@ -320,7 +320,7 @@ namespace Alchemy4Tridion.Plugins.Clients
         
         public ValidationErrorData[] Validate(IdentifiableObjectData deltaData)
         {
-            return this.Channel.Validate(deltaData);
+            return Channel.Validate(deltaData);
         }
 
       
@@ -334,7 +334,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public BinaryContentData GetExternalBinaryContentData(string uri)
         {
-            return this.Channel.GetExternalBinaryContentData(uri);
+            return Channel.GetExternalBinaryContentData(uri);
         }
 
        
@@ -347,7 +347,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public SynchronizationResult SynchronizeWithSchema(IdentifiableObjectData dataObject, SynchronizeOptions synchronizeOptions)
         {
-            return this.Channel.SynchronizeWithSchema(dataObject, synchronizeOptions);
+            return Channel.SynchronizeWithSchema(dataObject, synchronizeOptions);
         }
 
       
@@ -361,7 +361,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public SynchronizationResult SynchronizeWithSchemaAndUpdate(string itemId, SynchronizeOptions synchronizeOptions)
         {
-            return this.Channel.SynchronizeWithSchemaAndUpdate(itemId, synchronizeOptions);
+            return Channel.SynchronizeWithSchemaAndUpdate(itemId, synchronizeOptions);
         }
 
       
@@ -375,7 +375,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void DecommissionPublicationTarget(string publicationTargetId)
         {
-            this.Channel.DecommissionPublicationTarget(publicationTargetId);
+            Channel.DecommissionPublicationTarget(publicationTargetId);
         }
 
      
@@ -388,7 +388,7 @@ namespace Alchemy4Tridion.Plugins.Clients
       
         public SchemaFieldsData ConvertXsdToSchemaFields(XElement xsd, SchemaPurpose purpose, string rootElementName, ReadOptions readOptions)
         {
-            return this.Channel.ConvertXsdToSchemaFields(xsd, purpose, rootElementName, readOptions);
+            return Channel.ConvertXsdToSchemaFields(xsd, purpose, rootElementName, readOptions);
         }
 
       
@@ -402,7 +402,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string GetPublishUrl(string id, string targetTypeIdOrPurpose)
         {
-            return this.Channel.GetPublishUrl(id, targetTypeIdOrPurpose);
+            return Channel.GetPublishUrl(id, targetTypeIdOrPurpose);
         }
 
       
@@ -414,7 +414,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public LinkToBusinessProcessTypeData[] GetBusinessProcessTypes(string cdTopologyTypeId)
         {
-            return this.Channel.GetBusinessProcessTypes(cdTopologyTypeId);
+            return Channel.GetBusinessProcessTypes(cdTopologyTypeId);
         }
 
       
@@ -426,7 +426,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PublishSourceData GetPublishSourceByUrl(string url)
         {
-            return this.Channel.GetPublishSourceByUrl(url);
+            return Channel.GetPublishSourceByUrl(url);
         }
 
      
@@ -440,7 +440,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void RemovePublishStates(string publicationId, string targetTypeIdOrPurpose)
         {
-            this.Channel.RemovePublishStates(publicationId, targetTypeIdOrPurpose);
+            Channel.RemovePublishStates(publicationId, targetTypeIdOrPurpose);
         }
 
       
@@ -453,7 +453,7 @@ namespace Alchemy4Tridion.Plugins.Clients
        
         public ContainingPagesDictionary ResolveContainingPages(string componentId, ResolveContainingPagesInstructionData instruction)
         {
-            return this.Channel.ResolveContainingPages(componentId, instruction);
+            return Channel.ResolveContainingPages(componentId, instruction);
         }
 
       
@@ -467,7 +467,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void PurgeWorkflowHistory(PurgeWorkflowHistoryInstructionData instruction)
         {
-            this.Channel.PurgeWorkflowHistory(instruction);
+            Channel.PurgeWorkflowHistory(instruction);
         }
 
         public async Task PurgeWorkflowHistoryAsync(PurgeWorkflowHistoryInstructionData instruction)
@@ -477,19 +477,9 @@ namespace Alchemy4Tridion.Plugins.Clients
 
 
 
-
-
-
-
-
-
-
-
-
-
         public void BroadcastNotification(NotificationMessage notification)
         {
-            this.Channel.BroadcastNotification(notification);
+            Channel.BroadcastNotification(notification);
         }
 
         public async Task BroadcastNotificationAsync(NotificationMessage notification)
@@ -500,7 +490,7 @@ namespace Alchemy4Tridion.Plugins.Clients
        
         public SystemPrivilege[] GetSystemPrivileges()
         {
-            return this.Channel.GetSystemPrivileges();
+            return Channel.GetSystemPrivileges();
         }
 
    
@@ -514,7 +504,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string GetApiVersion()
         {
-            return this.Channel.GetApiVersion();
+            return Channel.GetApiVersion();
         }
 
 
@@ -527,7 +517,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public AccessTokenData GetCurrentUserWithToken()
         {
-            return this.Channel.GetCurrentUser();
+            return Channel.GetCurrentUser();
         }
 
        
@@ -540,7 +530,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public bool IsExistingObject(string id)
         {
-            return this.Channel.IsExistingObject(id);
+            return Channel.IsExistingObject(id);
         }
 
 
@@ -553,7 +543,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string GetTcmUri(string baseUri, string contextRepositoryUri, uint? version)
         {
-            return this.Channel.GetTcmUri(baseUri, contextRepositoryUri, version);
+            return Channel.GetTcmUri(baseUri, contextRepositoryUri, version);
         }
 
 
@@ -567,7 +557,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string TryGetTcmUri(string baseUri, string contextRepositoryUri, uint? version)
         {
-            return this.Channel.TryGetTcmUri(baseUri, contextRepositoryUri, version);
+            return Channel.TryGetTcmUri(baseUri, contextRepositoryUri, version);
         }
 
 
@@ -608,7 +598,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ItemReadResultDictionary BulkRead(string[] ids, ReadOptions readOptions)
         {
-            return this.Channel.BulkRead(ids, readOptions);
+            return Channel.BulkRead(ids, readOptions);
         }
 
        
@@ -621,7 +611,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public SchemaFieldsData ReadSchemaFields(string schemaId, bool expandEmbeddedFields, ReadOptions readOptions)
         {
-            return this.Channel.ReadSchemaFields(schemaId, expandEmbeddedFields, readOptions);
+            return Channel.ReadSchemaFields(schemaId, expandEmbeddedFields, readOptions);
         }
 
         public async Task<SchemaFieldsData> ReadSchemaFieldsAsync(string schemaId, bool expandEmbeddedFields, ReadOptions readOptions = null)
@@ -632,7 +622,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public XElement ConvertSchemaFieldsToXsd(SchemaFieldsData schemaFieldsData)
         {
-            return this.Channel.ConvertSchemaFieldsToXsd(schemaFieldsData);
+            return Channel.ConvertSchemaFieldsToXsd(schemaFieldsData);
         }
 
 
@@ -646,7 +636,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData Save(IdentifiableObjectData deltaData, ReadOptions readBackOptions)
         {
-            return this.Channel.Save(deltaData, readBackOptions);
+            return Channel.Save(deltaData, readBackOptions);
         }
 
 
@@ -659,7 +649,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void Delete(string id)
         {
-            this.Channel.Delete(id);
+            Channel.Delete(id);
         }
 
 
@@ -673,7 +663,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void DeleteTaxonomyNode(string id, DeleteTaxonomyNodeMode deleteTaxonomyNodeMode)
         {
-            this.Channel.DeleteTaxonomyNode(id, deleteTaxonomyNodeMode);
+            Channel.DeleteTaxonomyNode(id, deleteTaxonomyNodeMode);
         }
 
 
@@ -686,7 +676,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData GetDefaultData(ItemType itemType, string containerId, ReadOptions readOptions)
         {
-            return this.Channel.GetDefaultData(itemType, containerId, readOptions);
+            return Channel.GetDefaultData(itemType, containerId, readOptions);
         }
 
 
@@ -698,7 +688,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RepositoryLocalObjectData Move(string id, string destinationId, ReadOptions readBackOptions)
         {
-            return this.Channel.Move(id, destinationId, readBackOptions);
+            return Channel.Move(id, destinationId, readBackOptions);
         }
 
 
@@ -712,7 +702,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RepositoryLocalObjectData Copy(string id, string destinationId, bool makeUnique, ReadOptions readBackOptions)
         {
-            return this.Channel.Copy(id, destinationId, makeUnique, readBackOptions);
+            return Channel.Copy(id, destinationId, makeUnique, readBackOptions);
         }
 
 
@@ -725,7 +715,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public InstanceData GetInstanceData(string schemaId, string containerItemId, ReadOptions readOptions)
         {
-            return this.Channel.GetInstanceData(schemaId, containerItemId, readOptions);
+            return Channel.GetInstanceData(schemaId, containerItemId, readOptions);
         }
 
 
@@ -737,7 +727,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData TryCheckOut(string id, ReadOptions readBackOptions)
         {
-            return this.Channel.TryCheckOut(id, readBackOptions);
+            return Channel.TryCheckOut(id, readBackOptions);
         }
 
 
@@ -751,7 +741,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public VersionedItemData CheckOut(string id, bool permanentLock, ReadOptions readBackOptions)
         {
-            return this.Channel.CheckOut(id, permanentLock, readBackOptions);
+            return Channel.CheckOut(id, permanentLock, readBackOptions);
         }
 
 
@@ -765,7 +755,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public VersionedItemData CheckIn(string id, bool removePermanentLock, string userComment, ReadOptions readBackOptions)
         {
-            return this.Channel.CheckIn(id, removePermanentLock, userComment, readBackOptions);
+            return Channel.CheckIn(id, removePermanentLock, userComment, readBackOptions);
         }
 
 
@@ -779,7 +769,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData Update(IdentifiableObjectData deltaData, ReadOptions readBackOptions)
         {
-            return this.Channel.Update(deltaData, readBackOptions);
+            return Channel.Update(deltaData, readBackOptions);
         }
 
 
@@ -793,7 +783,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData Create(IdentifiableObjectData data, ReadOptions readBackOptions)
         {
-            return this.Channel.Create(data, readBackOptions);
+            return Channel.Create(data, readBackOptions);
         }
 
 
@@ -807,7 +797,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public VersionedItemData UndoCheckOut(string id, bool permanentLock, ReadOptions readBackOptions)
         {
-            return this.Channel.UndoCheckOut(id, permanentLock, readBackOptions);
+            return Channel.UndoCheckOut(id, permanentLock, readBackOptions);
         }
 
 
@@ -820,7 +810,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public VersionedItemData Rollback(string id, bool deleteVersions, string comment, ReadOptions readBackOptions)
         {
-            return this.Channel.Rollback(id, deleteVersions, comment, readBackOptions);
+            return Channel.Rollback(id, deleteVersions, comment, readBackOptions);
         }
 
 
@@ -834,7 +824,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RepositoryLocalObjectData Localize(string id, ReadOptions readBackOptions)
         {
-            return this.Channel.Localize(id, readBackOptions);
+            return Channel.Localize(id, readBackOptions);
         }
 
 
@@ -847,7 +837,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RepositoryLocalObjectData UnLocalize(string id, ReadOptions readBackOptions)
         {
-            return this.Channel.UnLocalize(id, readBackOptions);
+            return Channel.UnLocalize(id, readBackOptions);
         }
 
 
@@ -861,7 +851,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public OperationResultDataOfRepositoryLocalObjectData Promote(string id, string destinationRepositoryId, OperationInstruction instruction, ReadOptions readBackOptions)
         {
-            return this.Channel.Promote(id, destinationRepositoryId, instruction, readBackOptions);
+            return Channel.Promote(id, destinationRepositoryId, instruction, readBackOptions);
         }
 
       
@@ -873,7 +863,7 @@ namespace Alchemy4Tridion.Plugins.Clients
       
         public OperationResultDataOfRepositoryLocalObjectData Demote(string id, string destinationRepositoryId, OperationInstruction instruction, ReadOptions readBackOptions)
         {
-            return this.Channel.Demote(id, destinationRepositoryId, instruction, readBackOptions);
+            return Channel.Demote(id, destinationRepositoryId, instruction, readBackOptions);
         }
 
        
@@ -887,7 +877,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public TemplateType[] GetListTemplateTypes(ItemType? itemType)
         {
-            return this.Channel.GetListTemplateTypes(itemType);
+            return Channel.GetListTemplateTypes(itemType);
         }
 
 
@@ -900,7 +890,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PublicationType[] GetListPublicationTypes()
         {
-            return this.Channel.GetListPublicationTypes();
+            return Channel.GetListPublicationTypes();
         }
 
 
@@ -914,7 +904,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public XElement GetSystemWideListXml(SystemWideListFilterData filter)
         {
-            return this.Channel.GetSystemWideListXml(filter);
+            return Channel.GetSystemWideListXml(filter);
         }
 
 
@@ -927,7 +917,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData[] GetSystemWideList(SystemWideListFilterData filter)
         {
-            return this.Channel.GetSystemWideList(filter);
+            return Channel.GetSystemWideList(filter);
         }
 
 
@@ -941,7 +931,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public XElement GetListXml(string id, SubjectRelatedListFilterData filter)
         {
-            return this.Channel.GetListXml(id, filter);
+            return Channel.GetListXml(id, filter);
         }
 
 
@@ -955,7 +945,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData[] GetList(string id, SubjectRelatedListFilterData filter)
         {
-            return this.Channel.GetList(id, filter);
+            return Channel.GetList(id, filter);
         }
 
 
@@ -968,7 +958,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string[] GetListDirectoryServiceNames()
         {
-            return this.Channel.GetListDirectoryServiceNames();
+            return Channel.GetListDirectoryServiceNames();
         }
 
 
@@ -982,7 +972,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public WindowsUser[] GetListWindowsDomainUsers(string domainName)
         {
-            return this.Channel.GetListWindowsDomainUsers(domainName);
+            return Channel.GetListWindowsDomainUsers(domainName);
         }
 
 
@@ -996,7 +986,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public DirectoryServiceUser[] GetListDirectoryServiceAllUsers(string directoryServiceName)
         {
-            return this.Channel.GetListDirectoryServiceAllUsers(directoryServiceName);
+            return Channel.GetListDirectoryServiceAllUsers(directoryServiceName);
         }
 
 
@@ -1010,7 +1000,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public DirectoryServiceUser[] GetListDirectoryServiceGroupMembers(string directoryServiceName, string groupDN)
         {
-            return this.Channel.GetListDirectoryServiceGroupMembers(directoryServiceName, groupDN);
+            return Channel.GetListDirectoryServiceGroupMembers(directoryServiceName, groupDN);
         }
 
        
@@ -1024,7 +1014,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public DirectoryServiceUser[] GetListDirectoryServiceUsers(string directoryServiceName, DirectoryUsersFilter filter)
         {
-            return this.Channel.GetListDirectoryServiceUsers(directoryServiceName, filter);
+            return Channel.GetListDirectoryServiceUsers(directoryServiceName, filter);
         }
 
 
@@ -1038,7 +1028,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ClassificationInfoData Classify(string id, string[] keywordIds, ReadOptions readOptions)
         {
-            return this.Channel.Classify(id, keywordIds, readOptions);
+            return Channel.Classify(id, keywordIds, readOptions);
         }
 
        
@@ -1051,7 +1041,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ClassificationInfoData UnClassify(string id, string[] keywordIds, ReadOptions readOptions)
         {
-            return this.Channel.UnClassify(id, keywordIds, readOptions);
+            return Channel.UnClassify(id, keywordIds, readOptions);
         }
 
 
@@ -1065,7 +1055,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ClassificationInfoData ReClassify(string id, string[] keywordIdsToRemove, string[] keywordIdsToAdd, ReadOptions readOptions)
         {
-            return this.Channel.ReClassify(id, keywordIdsToRemove, keywordIdsToAdd, readOptions);
+            return Channel.ReClassify(id, keywordIdsToRemove, keywordIdsToAdd, readOptions);
         }
 
        
@@ -1077,7 +1067,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActivityInstanceData StartActivity(string activityInstanceId, ReadOptions readBackOptions)
         {
-            return this.Channel.StartActivity(activityInstanceId, readBackOptions);
+            return Channel.StartActivity(activityInstanceId, readBackOptions);
         }
 
 
@@ -1091,7 +1081,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActivityInstanceData SuspendActivity(string activityInstanceId, string reason, DateTime? resumeAt, string resumeBookmark, ReadOptions readBackOptions)
         {
-            return this.Channel.SuspendActivity(activityInstanceId, reason, resumeAt, resumeBookmark, readBackOptions);
+            return Channel.SuspendActivity(activityInstanceId, reason, resumeAt, resumeBookmark, readBackOptions);
         }
 
        
@@ -1104,7 +1094,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActivityInstanceData RestartActivity(string activityInstanceId, ReadOptions readBackOptions)
         {
-            return this.Channel.RestartActivity(activityInstanceId, readBackOptions);
+            return Channel.RestartActivity(activityInstanceId, readBackOptions);
         }
 
        
@@ -1117,7 +1107,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActivityInstanceData ReAssignActivity(string activityInstanceId, string newAssigneeId, ReadOptions readBackOptions)
         {
-            return this.Channel.ReAssignActivity(activityInstanceId, newAssigneeId, readBackOptions);
+            return Channel.ReAssignActivity(activityInstanceId, newAssigneeId, readBackOptions);
         }
 
 
@@ -1128,7 +1118,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActivityInstanceData FinishActivity(string activityInstanceId, ActivityFinishData activityFinishData, ReadOptions readOptions)
         {
-            return this.Channel.FinishActivity(activityInstanceId, activityFinishData, readOptions);
+            return Channel.FinishActivity(activityInstanceId, activityFinishData, readOptions);
         }
 
    
@@ -1141,7 +1131,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ProcessHistoryData ForceFinishProcess(string processInstanceId, string approvalStatusId, ReadOptions readOptions)
         {
-            return this.Channel.ForceFinishProcess(processInstanceId, approvalStatusId, readOptions);
+            return Channel.ForceFinishProcess(processInstanceId, approvalStatusId, readOptions);
         }
 
       
@@ -1154,7 +1144,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActivityInstanceData ResumeActivity(string activityInstanceId, ReadOptions readOptions)
         {
-            return this.Channel.ResumeActivity(activityInstanceId, readOptions);
+            return Channel.ResumeActivity(activityInstanceId, readOptions);
         }
 
       
@@ -1168,7 +1158,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public QueueMessageData[] GetListQueueMessages(int queueId)
         {
-            return this.Channel.GetListQueueMessages(queueId);
+            return Channel.GetListQueueMessages(queueId);
         }
 
         
@@ -1182,7 +1172,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void PurgeQueue(int queueId)
         {
-            this.Channel.PurgeQueue(queueId);
+            Channel.PurgeQueue(queueId);
         }
 
         
@@ -1196,7 +1186,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public QueueData[] GetListQueues()
         {
-            return this.Channel.GetListQueues();
+            return Channel.GetListQueues();
         }
 
        
@@ -1210,7 +1200,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ApplicationData ReadApplicationData(string subjectId, string applicationId)
         {
-            return this.Channel.ReadApplicationData(subjectId, applicationId);
+            return Channel.ReadApplicationData(subjectId, applicationId);
         }
 
        
@@ -1224,7 +1214,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ApplicationData[] ReadAllApplicationData(string subjectId)
         {
-            return this.Channel.ReadAllApplicationData(subjectId);
+            return Channel.ReadAllApplicationData(subjectId);
         }
 
         
@@ -1237,7 +1227,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void SaveApplicationData(string subjectId, ApplicationData[] applicationData)
         {
-            this.Channel.SaveApplicationData(subjectId, applicationData);
+            Channel.SaveApplicationData(subjectId, applicationData);
         }
 
 
@@ -1251,7 +1241,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void DeleteApplicationData(string subjectId, string applicationId)
         {
-            this.Channel.DeleteApplicationData(subjectId, applicationId);
+            Channel.DeleteApplicationData(subjectId, applicationId);
         }
 
 
@@ -1265,7 +1255,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string[] GetApplicationIds()
         {
-            return this.Channel.GetApplicationIds();
+            return Channel.GetApplicationIds();
         }
 
 
@@ -1277,7 +1267,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void PurgeApplicationData(string applicationId)
         {
-            this.Channel.PurgeApplicationData(applicationId);
+            Channel.PurgeApplicationData(applicationId);
         }
 
        
@@ -1291,7 +1281,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PredefinedBatchOperation? ParsePredefinedBatchOperation(string operation)
         {
-            return this.Channel.ParsePredefinedBatchOperation(operation);
+            return Channel.ParsePredefinedBatchOperation(operation);
         }
 
        
@@ -1305,7 +1295,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public string GetPredefinedBatchOperationName(PredefinedBatchOperation operation)
         {
-            return this.Channel.GetPredefinedBatchOperationName(operation);
+            return Channel.GetPredefinedBatchOperationName(operation);
         }
 
       
@@ -1319,7 +1309,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PublishContextData[] ResolveItems(string[] ids, ResolveInstructionData resolveInstruction, string[] targetIdsOrPurposes, ReadOptions readOptions)
         {
-            return this.Channel.ResolveItems(ids, resolveInstruction, targetIdsOrPurposes, readOptions);
+            return Channel.ResolveItems(ids, resolveInstruction, targetIdsOrPurposes, readOptions);
         }
 
        
@@ -1333,7 +1323,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public XElement GetSearchResultsXml(SearchQueryData filter)
         {
-            return this.Channel.GetSearchResultsXml(filter);
+            return Channel.GetSearchResultsXml(filter);
         }
 
 
@@ -1346,7 +1336,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public XElement GetSearchResultsXmlPaged(SearchQueryData filter, int startRowIndex, int maxRows)
         {
-            return this.Channel.GetSearchResultsXmlPaged(filter, startRowIndex, maxRows);
+            return Channel.GetSearchResultsXmlPaged(filter, startRowIndex, maxRows);
         }
 
 
@@ -1358,7 +1348,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData[] GetSearchResults(SearchQueryData filter)
         {
-            return this.Channel.GetSearchResults(filter);
+            return Channel.GetSearchResults(filter);
         }
 
 
@@ -1371,7 +1361,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public IdentifiableObjectData[] GetSearchResultsPaged(SearchQueryData filter, int startRowIndex, int maxRows)
         {
-            return this.Channel.GetSearchResultsPaged(filter, startRowIndex, maxRows);
+            return Channel.GetSearchResultsPaged(filter, startRowIndex, maxRows);
         }
 
 
@@ -1385,7 +1375,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RenderedItemData RenderItem(string itemId, string templateId, PublishInstructionData publishInstruction, string publicationTargetIdOrPurpose)
         {
-            return this.Channel.RenderItem(itemId, templateId, publishInstruction, publicationTargetIdOrPurpose);
+            return Channel.RenderItem(itemId, templateId, publishInstruction, publicationTargetIdOrPurpose);
         }
 
         public async Task<RenderedItemData> RenderItemAsync(string itemId, string templateId, PublishInstructionData publishInstruction, string publicationTargetIdOrPurpose)
@@ -1395,7 +1385,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RenderedItemData PreviewItem(RepositoryLocalObjectData itemData, TemplateData templateData, PublishInstructionData publishInstruction, string publicationTargetId)
         {
-            return this.Channel.PreviewItem(itemData, templateData, publishInstruction, publicationTargetId);
+            return Channel.PreviewItem(itemData, templateData, publishInstruction, publicationTargetId);
         }
 
 
@@ -1408,7 +1398,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PublishTransactionData[] Publish(string[] ids, PublishInstructionData publishInstruction, string[] targetIdsOrPurposes, PublishPriority? priority, ReadOptions readOptions)
         {
-            return this.Channel.Publish(ids, publishInstruction, targetIdsOrPurposes, priority, readOptions);
+            return Channel.Publish(ids, publishInstruction, targetIdsOrPurposes, priority, readOptions);
         }
 
 
@@ -1420,7 +1410,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PublishTransactionData[] UnPublish(string[] ids, UnPublishInstructionData unPublishInstruction, string[] targetIdsOrPurposes, PublishPriority? priority, ReadOptions readOptions)
         {
-            return this.Channel.UnPublish(ids, unPublishInstruction, targetIdsOrPurposes, priority, readOptions);
+            return Channel.UnPublish(ids, unPublishInstruction, targetIdsOrPurposes, priority, readOptions);
         }
 
         public async Task<PublishTransactionData[]> UnPublishAsync(string[] ids, UnPublishInstructionData unPublishInstruction, string[] targetIdsOrPurposes, PublishPriority? priority, ReadOptions readOptions)
@@ -1432,7 +1422,7 @@ namespace Alchemy4Tridion.Plugins.Clients
   
         public bool IsPublished(string itemId, string publishingTargetIdOrPurpose, bool isPublishedInContext)
         {
-            return this.Channel.IsPublished(itemId, publishingTargetIdOrPurpose, isPublishedInContext);
+            return Channel.IsPublished(itemId, publishingTargetIdOrPurpose, isPublishedInContext);
         }
 
 
@@ -1445,7 +1435,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public RenderedItemData GetWorkItemSnapshot(string workItemId)
         {
-            return this.Channel.GetWorkItemSnapshot(workItemId);
+            return Channel.GetWorkItemSnapshot(workItemId);
         }
 
         public async Task<RenderedItemData> GetWorkItemSnapshotAsync(string workItemId)
@@ -1457,7 +1447,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PublishInfoData[] GetListPublishInfo(string itemId)
         {
-            return this.Channel.GetListPublishInfo(itemId);
+            return Channel.GetListPublishInfo(itemId);
         }
 
         public async Task<PublishInfoData[]> GetListPublishInfoAsync(string itemId)
@@ -1469,7 +1459,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ActionFlags CastActions(int numericActions)
         {
-            return this.Channel.CastActions(numericActions);
+            return Channel.CastActions(numericActions);
         }
 
         public async Task<ActionFlags> CastActionsAsync(int numericActions)
@@ -1481,7 +1471,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void ValidateXml(IdentifiableObjectData data)
         {
-            this.Channel.ValidateXml(data);
+            Channel.ValidateXml(data);
         }
 
         public async Task ValidateXmlAsync(IdentifiableObjectData data)
@@ -1491,7 +1481,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public bool IsValidTridionWebSchemaXml(SchemaData data)
         {
-            return this.Channel.IsValidTridionWebSchemaXml(data);
+            return Channel.IsValidTridionWebSchemaXml(data);
         }
 
        
@@ -1504,7 +1494,7 @@ namespace Alchemy4Tridion.Plugins.Clients
        
         public ArrayOfTcmUri GetSubjectIdsWithApplicationData(string applicationId)
         {
-            return this.Channel.GetSubjectIdsWithApplicationData(applicationId);
+            return Channel.GetSubjectIdsWithApplicationData(applicationId);
         }
 
 
@@ -1517,7 +1507,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ApplicationDataDictionary ReadApplicationDataForSubjectsIds(string[] subjectIds, string[] applicationIds)
         {
-            return this.Channel.ReadApplicationDataForSubjectsIds(subjectIds, applicationIds);
+            return Channel.ReadApplicationDataForSubjectsIds(subjectIds, applicationIds);
         }
 
         
@@ -1531,7 +1521,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public SecurityDescriptorDataDictionary GetSecurityDescriptorsForSubjectsIds(string[] subjectIds)
         {
-            return this.Channel.GetSecurityDescriptorsForSubjectsIds(subjectIds);
+            return Channel.GetSecurityDescriptorsForSubjectsIds(subjectIds);
         }
 
        
@@ -1544,7 +1534,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public SecurityDescriptorDataDictionary GetContentSecurityDescriptorsForOrgItemIds(string[] organizationalItemIds)
         {
-            return this.Channel.GetContentSecurityDescriptorsForOrgItemIds(organizationalItemIds);
+            return Channel.GetContentSecurityDescriptorsForOrgItemIds(organizationalItemIds);
         }
 
        
@@ -1557,7 +1547,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void ReIndex(string id)
         {
-            this.Channel.ReIndex(id);
+            Channel.ReIndex(id);
         }
 
       
@@ -1571,7 +1561,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public PredefinedQueue? CastPredefinedQueue(int queueId)
         {
-            return this.Channel.CastPredefinedQueue(queueId);
+            return Channel.CastPredefinedQueue(queueId);
         }
 
       
@@ -1584,7 +1574,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public int PurgeOldVersions(PurgeOldVersionsInstructionData instruction)
         {
-            return this.Channel.PurgeOldVersions(instruction);
+            return Channel.PurgeOldVersions(instruction);
         }
 
         
@@ -1596,7 +1586,7 @@ namespace Alchemy4Tridion.Plugins.Clients
     
         public XElement GetListExternalLinks(string id)
         {
-            return this.Channel.GetListExternalLinks(id);
+            return Channel.GetListExternalLinks(id);
         }
 
 
@@ -1610,7 +1600,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public SearchQueryData ConvertXmlToSearchQuery(XElement searchQueryXml)
         {
-            return this.Channel.ConvertXmlToSearchQuery(searchQueryXml);
+            return Channel.ConvertXmlToSearchQuery(searchQueryXml);
         }
 
         public async Task<SearchQueryData> ConvertXmlToSearchQueryAsync(XElement searchQueryXml)
@@ -1621,7 +1611,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public XElement ConvertSearchQueryToXml(SearchQueryData searchQueryData)
         {
-            return this.Channel.ConvertSearchQueryToXml(searchQueryData);
+            return Channel.ConvertSearchQueryToXml(searchQueryData);
         }
 
 
