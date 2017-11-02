@@ -7,7 +7,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 {
 	public class AlchemyStreamUploadClient201501 : IAlchemyStreamUpload, IDisposable
 	{
-
+         
         public IStreamUpload201501 Channel { get; set; }
 
         /// <summary>
@@ -30,14 +30,14 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
             private set;
         }
 
-	    UploadResponse IAlchemyStreamUpload.UploadBinaryContent(UploadRequest request)
+        IUploadResponse IAlchemyStreamUpload.UploadBinaryContent(IUploadRequest request)
 		{
-			return Channel.UploadBinaryContent(request);
+			return Channel.UploadBinaryContent((UploadRequest201501) request);
 		}
 
         public string UploadBinaryContent(AccessTokenData AccessToken, Stream UploadContent)
         {
-            return Channel.UploadBinaryContent(new UploadRequest
+            return Channel.UploadBinaryContent(new UploadRequest201501
             {
                 AccessToken = AccessToken,
                 UploadContent = UploadContent
@@ -74,7 +74,7 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
         {
             if (Channel != null)
             {
-                IStreamDownloadChannel channel = (IStreamDownloadChannel) Channel;
+                IStreamUploadChannel channel = (IStreamUploadChannel) Channel;
                 if (!this._isDisposed && disposing)
                 {
                     this._isDisposed = true;

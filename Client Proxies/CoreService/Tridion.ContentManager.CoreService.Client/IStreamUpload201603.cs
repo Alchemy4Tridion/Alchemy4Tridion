@@ -8,12 +8,12 @@ namespace Alchemy4Tridion.Plugins.Clients.CoreService
 	public interface IStreamUpload201603
 	{
         [FaultContract(typeof(CoreServiceFault), Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryContentCoreServiceFaultFault", Name = "CoreServiceFault", Namespace = "http://www.sdltridion.com/ContentManager/R6"), OperationContract(Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryContent", ReplyAction = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryContentResponse")]
-        UploadResponse UploadBinaryContent(UploadRequest request);
+        UploadResponse201603 UploadBinaryContent(UploadRequest201603 request);
 
         [OperationContract(AsyncPattern = true, Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryContent", ReplyAction = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryContentResponse")]
-        IAsyncResult BeginUploadBinaryContent(UploadRequest request, AsyncCallback callback, object asyncState);
+        IAsyncResult BeginUploadBinaryContent(UploadRequest201603 request, AsyncCallback callback, object asyncState);
 
-        UploadResponse EndUploadBinaryContent(IAsyncResult result);
+        UploadResponse201603 EndUploadBinaryContent(IAsyncResult result);
 
         [FaultContract(typeof(CoreServiceFault), Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryByteArrayCoreServiceFaultFault", Name = "CoreServiceFault", Namespace = "http://www.sdltridion.com/ContentManager/R6"), OperationContract(Action = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryByteArray", ReplyAction = "http://www.sdltridion.com/ContentManager/CoreService/201603/IStreamUpload/UploadBinaryByteArrayResponse")]
         string UploadBinaryByteArray(AccessTokenData accessToken, byte[] data);

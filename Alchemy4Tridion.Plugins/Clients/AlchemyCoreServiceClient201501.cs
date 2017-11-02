@@ -346,7 +346,7 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public AccessTokenData GetCurrentUserWithToken()
         {
-            return this.Channel.GetCurrentUser();
+            return Channel.GetCurrentUser();
         }
 
         public async Task<AccessTokenData> GetCurrentUserWithTokenAsync()

@@ -328,6 +328,7 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload201603.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload201501.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamUpload201603.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IUploadResponse.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\SystemPrivilege.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\NotificationMessage.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\IStreamDownload.cs" />
@@ -608,7 +609,12 @@
     <Compile Include="Tridion.ContentManager.CoreService.Client\UpdateCompletedEventArgs1.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\UploadBinaryByteArrayCompletedEventArgs.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\UploadBinaryContentCompletedEventArgs.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\IUploadRequest.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\UploadRequest201501.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\UploadRequest201603.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\UploadRequest.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\UploadResponse201501.cs" />
+    <Compile Include="Tridion.ContentManager.CoreService.Client\UploadResponse201603.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\UploadResponse.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\UsedItemsFilterData.cs" />
     <Compile Include="Tridion.ContentManager.CoreService.Client\UserData.cs" />
