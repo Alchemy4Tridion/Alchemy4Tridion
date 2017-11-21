@@ -1291,38 +1291,39 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public ContainingPagesDictionary ResolveContainingPages(string componentId, ResolveContainingPagesInstructionData instruction)
         {
-            throw new NotImplementedException();
+            return Channel.ResolveContainingPages(componentId, instruction);
         }
 
         public ItemReadResultDictionary BulkRead(string[] ids, ReadOptions readOptions)
         {
-            throw new NotImplementedException();
+            return Channel.BulkRead(ids, readOptions);
         }
 
         public LinkToBusinessProcessTypeData[] GetBusinessProcessTypes(string cdTopologyTypeId)
         {
-            throw new NotImplementedException();
+            return Channel.GetBusinessProcessTypes(cdTopologyTypeId);
         }
 
         public OperationResultDataOfRepositoryLocalObjectData Demote(string id, string destinationRepositoryId, OperationInstruction instruction, ReadOptions readBackOptions)
         {
-            throw new NotImplementedException();
+            return Channel.Demote(id, destinationRepositoryId, instruction, readBackOptions);
         }
 
         public PublishSourceData GetPublishSourceByUrl(string url)
         {
-            throw new NotImplementedException();
+            return Channel.GetPublishSourceByUrl(url);
         }
 
-        public SchemaFieldsData ConvertXsdToSchemaFields(XElement xsd, SchemaPurpose purpose, string rootElementName, ReadOptions readOptions)
+        public SchemaFieldsData ConvertXsdToSchemaFields(XElement xsd, SchemaPurpose purpose, ReadOptions readOptions)
         {
-            throw new NotImplementedException();
+            return Channel.ConvertXsdToSchemaFields(xsd, purpose, null, readOptions);
         }
 
         public string GetPublishUrl(string id, string targetTypeIdOrPurpose)
         {
-            throw new NotImplementedException();
+            return Channel.GetPublishUrl(id, targetTypeIdOrPurpose);
         }
+
 
         public SystemPrivilege[] GetSystemPrivileges()
         {
@@ -1336,10 +1337,15 @@ namespace Alchemy4Tridion.Plugins.Clients
 
         public void PurgeWorkflowHistory(PurgeWorkflowHistoryInstructionData instruction)
         {
-            throw new NotImplementedException();
+            Channel.PurgeWorkflowHistory(instruction);
         }
 
         public void RemovePublishStates(string publicationId, string targetTypeIdOrPurpose)
+        {
+            Channel.RemovePublishStates(publicationId, targetTypeIdOrPurpose);
+        }
+
+        public SchemaFieldsData ConvertXsdToSchemaFields(XElement xsd, SchemaPurpose purpose, string rootElementName, ReadOptions readOptions)
         {
             throw new NotImplementedException();
         }
