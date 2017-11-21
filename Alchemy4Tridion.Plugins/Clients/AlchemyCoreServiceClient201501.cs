@@ -1289,6 +1289,61 @@ namespace Alchemy4Tridion.Plugins.Clients
             await Task.Factory.FromAsync(Channel.BeginEnlistInTransaction, Channel.EndEnlistInTransaction, null);
         }
 
+        public ContainingPagesDictionary ResolveContainingPages(string componentId, ResolveContainingPagesInstructionData instruction)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ItemReadResultDictionary BulkRead(string[] ids, ReadOptions readOptions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public LinkToBusinessProcessTypeData[] GetBusinessProcessTypes(string cdTopologyTypeId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public OperationResultDataOfRepositoryLocalObjectData Demote(string id, string destinationRepositoryId, OperationInstruction instruction, ReadOptions readBackOptions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PublishSourceData GetPublishSourceByUrl(string url)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SchemaFieldsData ConvertXsdToSchemaFields(XElement xsd, SchemaPurpose purpose, string rootElementName, ReadOptions readOptions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetPublishUrl(string id, string targetTypeIdOrPurpose)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SystemPrivilege[] GetSystemPrivileges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BroadcastNotification(NotificationMessage notification)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PurgeWorkflowHistory(PurgeWorkflowHistoryInstructionData instruction)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemovePublishStates(string publicationId, string targetTypeIdOrPurpose)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Finalizer
         /// </summary>
